@@ -73,6 +73,12 @@ namespace StFrancis
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<AppDbContext>();
+                context.Database.EnsureCreated();
+            }
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

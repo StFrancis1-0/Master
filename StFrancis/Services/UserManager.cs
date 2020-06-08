@@ -65,16 +65,16 @@ namespace StFrancis.Services
                 var claims = new List<Claim>()
                 {
                      new Claim(ClaimTypes.NameIdentifier, user.Id),
-                     new Claim("FirstName", user.FirstName),
-                     new Claim("LastName", user.LastName),
+                     new Claim("Surname", user.Surname),
+                     new Claim("OtherNames", user.OtherNames),
                      new Claim(ClaimTypes.MobilePhone, user.PhoneNumber),
                 };
 
                 var token = JwtTokenGenerator.GenerateAccessToken(claims, _configuration).ToString();
                 AuthResponse response = new AuthResponse
                 {
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
+                    Surname = user.Surname,
+                    OtherNames = user.OtherNames,
                     Token = token,
                     PhoneNumber = user.PhoneNumber,
                     ImagePath = user.ImagePath
@@ -102,15 +102,26 @@ namespace StFrancis.Services
 
                 User userToRegister = new User
                 {
-                    FirstName = registerVm.FirstName,
-                    LastName = registerVm.LastName,
+                    Surname = registerVm.Surname,
+                    OtherNames = registerVm.OtherNames,
                     Email = registerVm.Email,
                     PhoneNumber = registerVm.PhoneNumber,
-                    Sex = registerVm.Sex,
+                    Gender = registerVm.Sex,
                     DateOfBirth = registerVm.DateOfBirth,
                     UserName = registerVm.Email,
-                    Address = registerVm.Address,
-                    ImagePath = registerVm.ImagePath
+                    ResidentialAddress = registerVm.Address,
+                    ImagePath = registerVm.ImagePath,
+                    Organisation = registerVm.Organisation,
+                    Society = registerVm.Society,
+                    BCC = registerVm.BCC,
+                    StateOfOrigin = registerVm.State,
+                    NatureOfWork = registerVm.NatureOfWork,
+                    Occupation = registerVm.Occupation,
+                    WorshipCenter = registerVm.WorshipCenter,
+                    Suggestion = registerVm.Suggestion,
+                    MaritalStatus = registerVm.MaritalStatus,
+                    MembershipCardNumber = registerVm.MCardNumber,
+                    
                 };
 
                 var result = await _userManager.CreateAsync(userToRegister, registerVm.Password);
@@ -120,7 +131,7 @@ namespace StFrancis.Services
                 }
 
 
-                return new Tuple<bool, string>(true, userToRegister.FirstName + " " + userToRegister.LastName);
+                return new Tuple<bool, string>(true, userToRegister.Surname + " " + userToRegister.OtherNames);
             }
             catch (Exception ex)
             {
