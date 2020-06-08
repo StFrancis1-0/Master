@@ -1,0 +1,168 @@
+﻿@model StFrancis.ViewModel.RegisterVm
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+@section Css{ 
+    <style>
+        body {
+            background-color: #F0F5E8 !important;
+        }
+        .error{
+            color: darkred;
+        }
+    </style>
+}
+
+<div id="saved-home-main" class="container" style="margin-bottom: 90px; margin-left: 200px; margin-top: 50px;">
+    <div class="card">
+        <div class="card-body">
+            <form method="post" id="form1">
+                <div class="card col-md-10 mx-auto shadow g-px-100 g-pt-5 h-50">
+                    <div class="card-body">
+
+
+                        <div class="row">
+                            <div class="col-md-12 g-pt-20 ml-auto">
+                                <h4 class="col-md-12 form-group mb-2" readonly>Account Information</h4>
+                                <hr />
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>First Name<span class="text-danger">*</span></label>
+                                <input asp-for="FirstName" required id="fstname"class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="First Name">
+
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Last Name<span class="text-danger">*</span></label>
+                                <input asp-for="LastName" required id="lstname" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Last Name">
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>Email</label>
+                                <input asp-for="Email"  id="email" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="email" placeholder="Email Address">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Address<span class="text-danger">*</span></label>
+                                <input asp-for="Address" required id="address" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Contact Address">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Phone Number<span class="text-danger">*</span></label>
+                                <input asp-for="PhoneNumber" required id="phone" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your Phone number here ">
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>Gender<span class="text-danger">*</span></label>
+                                <select asp-for="Sex" required id="gender"class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
+                                    <option value="">--Please choose an option--</option>
+                                    <option value="Male">M</option>
+                                    <option value="Female">F</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Date of Birth<span class="text-danger">*</span></label>
+                                <input asp-for="DateOfBirth" required id="dob"class="form-control" type="text" placeholder="Eneter your DOB">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Password<span class="text-danger">*</span></label>
+                                <input asp-for="Password" required id="password" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="password" placeholder="Your password here ">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Confirm Password<span class="text-danger">*</span></label>
+                                <input asp-for="ConfirmPassword" required id="cpassword" data-rule-equalTo="#password" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3  g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="password" placeholder="Repeat your password ">
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label>Profile Picture<span class="text-danger">*</span></label>
+                                <input id="picture" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="file" placeholder="Upload your picture">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" style="margin-top: 10px;">
+                                <button style="background-color: #5a233a;" id="btnsubmit" class="btn  btn-primary prevBtn btn-md  ml-auto " type="button">Register</button>
+                            </div>
+                            <div class="col-md-6" style="margin-top: -10px;">
+                                <p>Already have an acount?</p><a class="pull-right"  style="margin-top: -48px"; href="/accounts/login">Login</a>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+    <script>
+        var registerForm = $("#form1");
+        registerForm.validate({
+            messages: {
+                cpassword: {
+                    equalTo: "Passwords do not match",
+                }
+            }
+        });
+
+        $("#btnsubmit").click(function () {
+            if (registerForm.valid())
+            {
+                var data = new FormData();
+                var file = $("#picture")[0].files[0];
+                data.append('image', file);
+                data.append('Email', $("#email").val());
+                data.append('PhoneNumber', $("#phone").val());
+                data.append('FirstName', $("#fstname").val());
+                data.append('LastName', $("#lstname").val());
+                data.append('Password', $("#cpassword").val());
+                data.append('Sex', $("#gender").val());
+                data.append('DateOfBirth', $("#dob").val());
+                data.append('Address', $("#address").val());
+
+                $.ajax({
+                    url: "/accounts/register",
+                    type: "POST",
+                    data: data,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        if (res.status) {
+                            clearForm();
+                            swal('Registration Successful!', res.data, 'success');
+                            clearForm();
+                            return;
+                        }
+                        swal('Error', res.data, 'error');
+                    },
+                    error: function (err) {
+                        swal('Error', "Oops! An error occured while processing your request.", 'error');
+                    }
+                })
+
+            }
+
+
+        })
+
+
+        function clearForm() {
+            $("#email").val('');
+            $("#phone").val('');
+            $("#phone").val('');
+            $("#fstname").val('');
+            $("#lstname").val('');
+            $("#cpassword").val('');
+            $("#password").val('');
+            $("#gender").val('');
+            $("#dob").val('');
+            $("#address").val('');
+            $("#picture").val('');
+
+        }
+
+
+      
+    </script>
+}

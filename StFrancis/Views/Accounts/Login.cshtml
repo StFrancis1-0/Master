@@ -1,0 +1,111 @@
+﻿@model StFrancis.ViewModel.AuthVm
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Customcss/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Customcss/main.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!--===============================================================================================-->
+    <style>
+        .error{
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url(/wp-content/uploads/2018/08/bg.jpeg);">
+            <div class="wrap-login100 p-t-30 p-b-50">
+                <span class="login100-form-title p-b-41">
+                    Account Login
+                </span>
+                <form method="post" id="loginForm" class="login100-form validate-form p-b-33 p-t-5">
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        <input required class="input100" id="username" type="text" asp-for="Phone_Email" placeholder="Email/Phone number">
+                        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input required class="input100" id="password" type="password" asp-for="Password" placeholder="Password">
+                        <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn m-t-32">
+                        <button id="btnlogin" class="login100-form-btn" type="button">
+                            Login
+                        </button>
+                    </div>
+
+                </form>
+                <p class="text-white" style="margin-top: 10px;">Don't have an account?</p>
+                <a href="/accounts/register" class="pull-right text-white" style="margin-top: -30px; margin-left: 2px;">Register</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/jwt-decode.min.js"></script>
+</body>
+</html>
+@section Scripts{
+    <script>
+
+        var loginForm = $("#loginForm");
+        loginForm.validate();
+
+        function clearForm() {
+            $("#username").val('');
+            $("#password").val('');
+        }
+
+        $("#btnlogin").click(function () {
+
+            if (loginForm.valid())
+            {
+                var loginVm = {
+                    Phone_Email: $("#username").val(),
+                    Password: $("#password").val(),
+                }
+                $.ajax({
+                    url: "/accounts/login",
+                    type: "POST",
+                    data: JSON.stringify(loginVm),
+                    contentType: "application/json",
+                    success: function (res) {
+                        if (res.status) {
+                            var token = res.data.token;
+                            sessionStorage.setItem('token', token);
+                            localStorage.setItem('token', token);
+                            var decoded = jwt_decode(token);
+                            clearForm();
+                            console.log(decoded);
+                            //swal('Registration Successful!', " ", 'success');
+
+                            return;
+                        }
+                        swal('Error', " ", 'error');
+
+                    },
+                    error: function (err) {
+                        swal('Error', "Oops! An error occured while processing your request.", 'error');
+                    }
+                })
+
+            }
+            
+        })
+    </script>
+}
+

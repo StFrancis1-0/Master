@@ -1,0 +1,16 @@
+/*
+Theme Name: Saved Child
+Description: A child theme for Saved.
+Author: Your Name
+Version: 1.0
+Template: saved
+*/
+
+/*
+This stylesheet is loaded instead of the parent theme's stylesheet, which is enqueued in functions.php.
+To override styles, copy them here from the original stylesheet, then change the properties.
+
+See http://churchthemes.com/guides/developer/child-theming/ and the WordPress Codex:
+http://codex.wordpress.org/Child_Themes
+*/
+
