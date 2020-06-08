@@ -12602,11 +12602,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User01\\Downloads\\StFrancis\\StFrancis\\StFrancis\\StFrancis.csproj",
+      "projectUniqueName": "C:\\Users\\User01\\source\\repos\\StFrancis\\StFrancis\\StFrancis\\StFrancis.csproj",
       "projectName": "StFrancis",
-      "projectPath": "C:\\Users\\User01\\Downloads\\StFrancis\\StFrancis\\StFrancis\\StFrancis.csproj",
+      "projectPath": "C:\\Users\\User01\\source\\repos\\StFrancis\\StFrancis\\StFrancis\\StFrancis.csproj",
       "packagesPath": "C:\\Users\\User01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User01\\Downloads\\StFrancis\\StFrancis\\StFrancis\\obj\\",
+      "outputPath": "C:\\Users\\User01\\source\\repos\\StFrancis\\StFrancis\\StFrancis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
