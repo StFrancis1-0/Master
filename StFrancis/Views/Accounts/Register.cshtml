@@ -82,14 +82,12 @@
                                     </div>
 
                                     <div class="col-6">
-                                        <label>Worship Center<span class="text-danger">*</span></label>
-                                        <select asp-for="WorshipCenter" required id="worship" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
-                                            <option value="">--Please choose an option--</option>
-                                            <option value="St Francis Oregun">St Francis Oregun</option>
-                                            <option value="Mother of Perpetual help Ikosi Ketu">Mother of Perpetual help Ikosi Ketu</option>
-                                        </select>
+                                        <label>BCC</label>
+                                        <input asp-for="BCC" id="bcc" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your BCC here">
 
                                     </div>
+
+                                   
 
                                 </div>
 
@@ -116,9 +114,14 @@
                                 </div>
 
                                 <div class="row">
+
                                     <div class="col-6">
-                                        <label>BCC</label>
-                                        <input asp-for="BCC" id="bcc" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your BCC here">
+                                        <label>Worship Center<span class="text-danger">*</span></label>
+                                        <select asp-for="WorshipCenter" required id="worship" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
+                                            <option value="">--Please choose an option--</option>
+                                            <option value="St Francis Oregun">St Francis Oregun</option>
+                                            <option value="Mother of Perpetual help Ikosi Ketu">Mother of Perpetual help Ikosi Ketu</option>
+                                        </select>
 
                                     </div>
 
