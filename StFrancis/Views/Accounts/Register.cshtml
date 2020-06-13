@@ -82,14 +82,12 @@
                                     </div>
 
                                     <div class="col-6">
-                                        <label>Worship Center<span class="text-danger">*</span></label>
-                                        <select asp-for="WorshipCenter" required id="worship" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
-                                            <option value="">--Please choose an option--</option>
-                                            <option value="St Francis Oregun">St Francis Oregun</option>
-                                            <option value="Mother of Perpetual help Ikosi Ketu">Mother of Perpetual help Ikosi Ketu</option>
-                                        </select>
+                                        <label>BCC</label>
+                                        <input asp-for="BCC" id="bcc" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your BCC here">
 
                                     </div>
+
+                                   
 
                                 </div>
 
@@ -116,9 +114,14 @@
                                 </div>
 
                                 <div class="row">
+
                                     <div class="col-6">
-                                        <label>BCC</label>
-                                        <input asp-for="BCC" id="bcc" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your BCC here">
+                                        <label>Worship Center<span class="text-danger">*</span></label>
+                                        <select asp-for="WorshipCenter" required id="worship" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
+                                            <option value="">--Please choose an option--</option>
+                                            <option value="St Francis Oregun">St Francis Oregun</option>
+                                            <option value="Mother of Perpetual help Ikosi Ketu">Mother of Perpetual help Ikosi Ketu</option>
+                                        </select>
 
                                     </div>
 
@@ -153,7 +156,8 @@
                                 </div>
 
                                
-                            </div> <input type="button" name="next" class="next action-button" value="Next" />
+                            </div> 
+                            <input type="button" name="next" class="next action-button" value="Next"/>
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
@@ -164,8 +168,6 @@
                                     <div class="col-5">
                                         <h2 class="steps">Step 2 - 4</h2>
                                     </div>
-
-
 
                                 </div>
                                 <div class="row">
@@ -182,15 +184,46 @@
                                         <input asp-for="State" required id="state" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your State of Origin">
                                     </div>
                                     <div class="col-6">
-                                        <div class="form-group">
-                                            <label>Date of Birth<span class="text-danger">*</span></label>
-                                            <input asp-for="DateOfBirth" required id="dob" class="form-control" type="text" placeholder="Eneter your DOB">
-                                        </div>
+
+                                        <label>Date of Birth<span class="text-danger">*</span></label>
+                                        <input asp-for="DateOfBirth" required id="dob" class="form-control" type="text" placeholder="Eneter your DOB">
+
                                     </div>
                                 </div>
 
-                                <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Marital Status<span class="text-danger">*</span></label>
+                                        <select asp-for="MaritalStatus" required id="maritalstatus" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
+                                            <option value="">--Please choose an option--</option>
+                                            <option value="Single">Single</option>
+                                            <option value="Married">Married</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+
+                                        <label>Occupation<span class="text-danger">*</span></label>
+                                        <input asp-for="Occupation" required id="occupation" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your occupation here ">
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>State of Origin<span class="text-danger">*</span></label>
+                                        <input asp-for="State" required id="state" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your State of Origin">
+                                    </div>
+                                    <div class="col-6">
+
+                                        <label>Nature of Work/Business<span class="text-danger">*</span></label>
+                                        <input asp-for="NatureOfWork" required id="business" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your nature of work/business here ">
+
+                                    </div>
+                                </div>
+
+
                             </div>
+                            <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
@@ -201,8 +234,18 @@
                                     <div class="col-5">
                                         <h2 class="steps">Step 3 - 4</h2>
                                     </div>
-                                </div> <label class="fieldlabels">Upload Your Photo:</label> <input type="file" name="pic" accept="image/*"> <label class="fieldlabels">Upload Signature Photo:</label> <input type="file" name="pic" accept="image/*">
-                            </div> <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="fieldlabels">Upload Your Photo:</label> <input type="file" name="pic" accept="image/*"> <label class="fieldlabels">Upload Signature Photo:</label> <input type="file" name="pic" accept="image/*">
+                                    </div>
+                                  
+                                </div>
+
+                               
+                            </div> 
+                            <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
@@ -233,86 +276,86 @@
 
 @section Scripts{
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="~/js/Steps.js"></script>
 
     <script>
 
 
 
-        $("#btnsubmit").click(function () {
-            if (registerForm.valid()) {
-                var data = new FormData();
-                var file = $("#picture")[0].files[0];
-                data.append('image', file);
-                data.append('Email', $("#email").val());
-                data.append('State', $("#state").val());
-                data.append('MaritalStatus', $("#maritalstatus").val());
-                data.append('Occupation', $("#occupation").val());
-                data.append('NatureOfWork', $("#business").val());
-                data.append('WorshipCenter', $("#worship").val());
-                data.append('Organisation', $("#org").val());
-                data.append('Society', $("#society").val());
-                data.append('BCC', $("#bcc").val());
-                data.append('MCardNumber', $("#card").val());
-                data.append('Suggestion', $("#suggestion").val());
-                data.append('PhoneNumber', $("#phone").val());
-                data.append('Surname', $("#surname").val());
-                data.append('OtherNames', $("#othname").val());
-                data.append('Password', $("#cpassword").val());
-                data.append('Sex', $("#gender").val());
-                data.append('DateOfBirth', $("#dob").val());
-                data.append('Address', $("#address").val());
+        //$("#btnsubmit").click(function () {
+        //    if (registerForm.valid()) {
+        //        var data = new FormData();
+        //        var file = $("#picture")[0].files[0];
+        //        data.append('image', file);
+        //        data.append('Email', $("#email").val());
+        //        data.append('State', $("#state").val());
+        //        data.append('MaritalStatus', $("#maritalstatus").val());
+        //        data.append('Occupation', $("#occupation").val());
+        //        data.append('NatureOfWork', $("#business").val());
+        //        data.append('WorshipCenter', $("#worship").val());
+        //        data.append('Organisation', $("#org").val());
+        //        data.append('Society', $("#society").val());
+        //        data.append('BCC', $("#bcc").val());
+        //        data.append('MCardNumber', $("#card").val());
+        //        data.append('Suggestion', $("#suggestion").val());
+        //        data.append('PhoneNumber', $("#phone").val());
+        //        data.append('Surname', $("#surname").val());
+        //        data.append('OtherNames', $("#othname").val());
+        //        data.append('Password', $("#cpassword").val());
+        //        data.append('Sex', $("#gender").val());
+        //        data.append('DateOfBirth', $("#dob").val());
+        //        data.append('Address', $("#address").val());
 
-                $.ajax({
-                    url: "/accounts/register",
-                    type: "POST",
-                    data: data,
-                    contentType: false,
-                    processData: false,
-                    success: function (res) {
-                        if (res.status) {
-                            clearForm();
-                            swal('Registration Successful!', res.data, 'success');
-                            clearForm();
-                            return;
-                        }
-                        swal('Error', res.data, 'error');
-                    },
-                    error: function (err) {
-                        swal('Error', "Oops! An error occured while processing your request.", 'error');
-                    }
-                })
+        //        $.ajax({
+        //            url: "/accounts/register",
+        //            type: "POST",
+        //            data: data,
+        //            contentType: false,
+        //            processData: false,
+        //            success: function (res) {
+        //                if (res.status) {
+        //                    clearForm();
+        //                    swal('Registration Successful!', res.data, 'success');
+        //                    clearForm();
+        //                    return;
+        //                }
+        //                swal('Error', res.data, 'error');
+        //            },
+        //            error: function (err) {
+        //                swal('Error', "Oops! An error occured while processing your request.", 'error');
+        //            }
+        //        })
 
-            }
-
-
-        })
+        //    }
 
 
-        function clearForm() {
-            $("#email").val('');
-            $("#phone").val('');
-            $("#state").val('');
-            $("#surname").val('');
-            $("#org").val('');
-            $("#suggestion").val('');
-            $("#bcc").val('');
-            $("#society").val('');
-            $("#business").val('');
-            $("#worship").val('');
-            $("#occupation").val('');
-            $("#card").val('');
-            $("#maritalstatus").val('');
-            $("#othname").val('');
-            $("#cpassword").val('');
-            $("#password").val('');
-            $("#gender").val('');
-            $("#dob").val('');
-            $("#address").val('');
-            $("#picture").val('');
+        //})
 
-        }
+
+        //function clearForm() {
+        //    $("#email").val('');
+        //    $("#phone").val('');
+        //    $("#state").val('');
+        //    $("#surname").val('');
+        //    $("#org").val('');
+        //    $("#suggestion").val('');
+        //    $("#bcc").val('');
+        //    $("#society").val('');
+        //    $("#business").val('');
+        //    $("#worship").val('');
+        //    $("#occupation").val('');
+        //    $("#card").val('');
+        //    $("#maritalstatus").val('');
+        //    $("#othname").val('');
+        //    $("#cpassword").val('');
+        //    $("#password").val('');
+        //    $("#gender").val('');
+        //    $("#dob").val('');
+        //    $("#address").val('');
+        //    $("#picture").val('');
+
+        //}
 
 
 
