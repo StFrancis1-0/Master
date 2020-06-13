@@ -3,167 +3,121 @@
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
-@section Css{ 
-    <style>
-        body {
-            background-color: #F0F5E8 !important;
-        }
-        .error{
-            color: darkred;
-        }
-    </style>
+@section Css{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+
+    <link href="~/css/Form.css" rel="stylesheet" />
+
 }
 
-<div id="saved-home-main" class="container" style="margin-bottom: 90px; margin-left: 200px; margin-top: 50px;">
-    <div class="card">
-        <div class="card-body">
-            <form method="post" id="form1">
-                <div class="card col-md-10 mx-auto shadow g-px-100 g-pt-5 h-50">
-                    <div class="card-body">
 
 
-                        <div class="row">
-                            <div class="col-md-12 g-pt-20 ml-auto">
-                                <h4 class="col-md-12 form-group mb-2" readonly>Account Information</h4>
-                                <hr />
-                            </div>
 
-                            <div class="col-md-6 form-group">
-                                <label>Surname<span class="text-danger">*</span></label>
-                                <input asp-for="Surname" required id="surname" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your surname">
 
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Other Names<span class="text-danger">*</span></label>
-                                <input asp-for="OtherNames" required id="othname" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Other names">
-                            </div>
+    <div id="saved-home-main" class="container-fluid" style="margin-bottom: 90px;  margin-top: 50px;">
 
-                            <div class="col-md-6 form-group">
-                                <label>Email</label><span class="text-danger">*</span>
-                                <input asp-for="Email" required id="email" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="email" placeholder="Email Address">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Residential Address<span class="text-danger">*</span></label>
-                                <input asp-for="Address" required id="address" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your Residential Address">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>State of Origin<span class="text-danger">*</span></label>
-                                <input asp-for="State" required id="state" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your State of Origin">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Phone Number<span class="text-danger">*</span></label>
-                                <input asp-for="PhoneNumber" required id="phone" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your Phone number here ">
-                            </div>
 
-                            <div class="col-md-6 form-group">
-                                <label>Gender<span class="text-danger">*</span></label>
-                                <select asp-for="Sex" required id="gender" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
-                                    <option value="">--Please choose an option--</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Date of Birth<span class="text-danger">*</span></label>
-                                <input asp-for="DateOfBirth" required id="dob" class="form-control" type="text" placeholder="Eneter your DOB">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Marital Status<span class="text-danger">*</span></label>
-                                <select asp-for="MaritalStatus" required id="maritalstatus" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
-                                    <option value="">--Please choose an option--</option>
-                                    <option value="Single">Single</option>
-                                    <option value="Married">Married</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Occupation<span class="text-danger">*</span></label>
-                                <input asp-for="Occupation" required id="occupation" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your occupation here ">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Nature of Work/Business<span class="text-danger">*</span></label>
-                                <input asp-for="NatureOfWork" required id="business" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your nature of work/business here ">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Worship Center<span class="text-danger">*</span></label>
-                                <select asp-for="WorshipCenter" required id="worship" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
-                                    <option value="">--Please choose an option--</option>
-                                    <option value="St Francis Oregun">St Francis Oregun</option>
-                                    <option value="Mother of Perpetual help Ikosi Ketu">Mother of Perpetual help Ikosi Ketu</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Am a member of which organisation?</label>
-                                <select asp-for="Organisation"  id="org" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
-                                    <option value="">--Please choose an option--</option>
-                                    <option value="CMO">CMO</option>
-                                    <option value="CWO">CWO</option>
-                                    <option value="CYAA">CYAA</option>
-                                    <option value="CYON">CYON</option>
-                                    <option value="MCA">MCA</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>I belong to which Society?</label>
-                                <input asp-for="Society"  id="society" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your society here">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>BCC</label>
-                                <input asp-for="BCC" id="bcc" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your BCC here">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Membership Card Number</label>
-                                <input asp-for="MCardNumber"  id="card" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your membership card number here">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <label>Suggestion(s)</label>
-                                <textarea asp-for="Suggestion"  id="suggestion" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" rows="3" placeholder="Let's know your suggestions"></textarea>
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <label>Password<span class="text-danger">*</span></label>
-                                <input asp-for="Password" required id="password" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="password" placeholder="Your password here ">
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <label>Confirm Password<span class="text-danger">*</span></label>
-                                <input asp-for="ConfirmPassword" required id="cpassword" data-rule-equalTo="#password" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3  g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="password" placeholder="Repeat your password ">
-                            </div>
 
-                            <div class="col-md-4 form-group">
-                                <label>Profile Picture<span class="text-danger">*</span></label>
-                                <input id="picture" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="file" placeholder="Upload your picture">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-8 text-center p-0 mt-3 mb-2">
+            
+                    <h2 id="heading">Parishioner Signup Form</h2>
+                    <p>Fill all form field to go to next step</p>
+                    <form id="msform">
+                        <!-- progressbar -->
+                        <ul id="progressbar">
+                            <li class="active" id="account"><strong>Account</strong></li>
+                            <li id="personal"><strong>Personal</strong></li>
+                            <li id="payment"><strong>Image</strong></li>
+                            <li id="confirm"><strong>Finish</strong></li>
+                        </ul>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div> <br> <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Account Information:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 1 - 4</h2>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="fieldlabels">Email: *</label> <input type="email" name="email" placeholder="Email Id" />
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="fieldlabels">Username: *</label> <input type="text" name="uname" placeholder="UserName" />
+                                    </div>
+                                </div>
+                             <label class="fieldlabels">Password: *</label> <input type="password" name="pwd" placeholder="Password" /> <label class="fieldlabels">Confirm Password: *</label> <input type="password" name="cpwd" placeholder="Confirm Password" />
+                            </div> <input type="button" name="next" class="next action-button" value="Next" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Personal Information:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 2 - 4</h2>
+                                    </div>
+                                </div> <label class="fieldlabels">First Name: *</label> <input type="text" name="fname" placeholder="First Name" /> <label class="fieldlabels">Last Name: *</label> <input type="text" name="lname" placeholder="Last Name" /> <label class="fieldlabels">Contact No.: *</label> <input type="text" name="phno" placeholder="Contact No." /> <label class="fieldlabels">Alternate Contact No.: *</label> <input type="text" name="phno_2" placeholder="Alternate Contact No." />
+                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Image Upload:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 3 - 4</h2>
+                                    </div>
+                                </div> <label class="fieldlabels">Upload Your Photo:</label> <input type="file" name="pic" accept="image/*"> <label class="fieldlabels">Upload Signature Photo:</label> <input type="file" name="pic" accept="image/*">
+                            </div> <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Finish:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 4 - 4</h2>
+                                    </div>
+                                </div> <br><br>
+                                <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
+                                <div class="row justify-content-center">
+                                    <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                                </div> <br><br>
+                                <div class="row justify-content-center">
+                                    <div class="col-7 text-center">
+                                        <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
+                                    </div>
+                                </div>
                             </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6" style="margin-top: 10px;">
-                                <button style="background-color: #5a233a;" id="btnsubmit" class="btn  btn-primary prevBtn btn-md  ml-auto " type="button">Register</button>
-                            </div>
-                            <div class="col-md-6" style="margin-top: -10px;">
-                                <p>Already have an acount?</p><a class="pull-right"  style="margin-top: -48px"; href="/accounts/login">Login</a>
-                            </div>
-                        </div>
-                        
-
-                    </div>
+                        </fieldset>
+                    </form>
                 </div>
-            </form>
+            
         </div>
     </div>
-</div>
 
-@section Scripts{ 
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="~/js/Steps.js"></script>
+
     <script>
-        var registerForm = $("#form1");
-        registerForm.validate({
-            messages: {
-                cpassword: {
-                    equalTo: "Passwords do not match",
-                }
-            }
-        });
+
+
 
         $("#btnsubmit").click(function () {
-            if (registerForm.valid())
-            {
+            if (registerForm.valid()) {
                 var data = new FormData();
                 var file = $("#picture")[0].files[0];
                 data.append('image', file);
@@ -237,6 +191,6 @@
         }
 
 
-      
+
     </script>
 }
