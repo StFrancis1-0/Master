@@ -186,7 +186,7 @@
                                     <div class="col-6">
 
                                         <label>Date of Birth<span class="text-danger">*</span></label>
-                                        <input asp-for="DateOfBirth" required id="dob" class="form-control" type="text" placeholder="Eneter your DOB">
+                                        <input asp-for="DateOfBirth" required id="dob" class="form-control" type="date" placeholder="Eneter your DOB">
 
                                     </div>
                                 </div>
@@ -238,7 +238,10 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <label class="fieldlabels">Upload Your Photo:</label> <input type="file" name="pic" accept="image/*"> <label class="fieldlabels">Upload Signature Photo:</label> <input type="file" name="pic" accept="image/*">
+
+                                        <label>Profile Picture<span class="text-danger">*</span></label>
+                                        <input id="picture" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="file" placeholder="Upload your picture">
+
                                     </div>
                                   
                                 </div>
@@ -283,79 +286,79 @@
 
 
 
-        //$("#btnsubmit").click(function () {
-        //    if (registerForm.valid()) {
-        //        var data = new FormData();
-        //        var file = $("#picture")[0].files[0];
-        //        data.append('image', file);
-        //        data.append('Email', $("#email").val());
-        //        data.append('State', $("#state").val());
-        //        data.append('MaritalStatus', $("#maritalstatus").val());
-        //        data.append('Occupation', $("#occupation").val());
-        //        data.append('NatureOfWork', $("#business").val());
-        //        data.append('WorshipCenter', $("#worship").val());
-        //        data.append('Organisation', $("#org").val());
-        //        data.append('Society', $("#society").val());
-        //        data.append('BCC', $("#bcc").val());
-        //        data.append('MCardNumber', $("#card").val());
-        //        data.append('Suggestion', $("#suggestion").val());
-        //        data.append('PhoneNumber', $("#phone").val());
-        //        data.append('Surname', $("#surname").val());
-        //        data.append('OtherNames', $("#othname").val());
-        //        data.append('Password', $("#cpassword").val());
-        //        data.append('Sex', $("#gender").val());
-        //        data.append('DateOfBirth', $("#dob").val());
-        //        data.append('Address', $("#address").val());
+        $("#btnsubmit").click(function () {
+            if (registerForm.valid()) {
+                var data = new FormData();
+                var file = $("#picture")[0].files[0];
+                data.append('image', file);
+                data.append('Email', $("#email").val());
+                data.append('State', $("#state").val());
+                data.append('MaritalStatus', $("#maritalstatus").val());
+                data.append('Occupation', $("#occupation").val());
+                data.append('NatureOfWork', $("#business").val());
+                data.append('WorshipCenter', $("#worship").val());
+                data.append('Organisation', $("#org").val());
+                data.append('Society', $("#society").val());
+                data.append('BCC', $("#bcc").val());
+                data.append('MCardNumber', $("#card").val());
+                data.append('Suggestion', $("#suggestion").val());
+                data.append('PhoneNumber', $("#phone").val());
+                data.append('Surname', $("#surname").val());
+                data.append('OtherNames', $("#othname").val());
+                data.append('Password', $("#cpassword").val());
+                data.append('Sex', $("#gender").val());
+                data.append('DateOfBirth', $("#dob").val());
+                data.append('Address', $("#address").val());
 
-        //        $.ajax({
-        //            url: "/accounts/register",
-        //            type: "POST",
-        //            data: data,
-        //            contentType: false,
-        //            processData: false,
-        //            success: function (res) {
-        //                if (res.status) {
-        //                    clearForm();
-        //                    swal('Registration Successful!', res.data, 'success');
-        //                    clearForm();
-        //                    return;
-        //                }
-        //                swal('Error', res.data, 'error');
-        //            },
-        //            error: function (err) {
-        //                swal('Error', "Oops! An error occured while processing your request.", 'error');
-        //            }
-        //        })
+                $.ajax({
+                    url: "/accounts/register",
+                    type: "POST",
+                    data: data,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        if (res.status) {
+                            clearForm();
+                            swal('Registration Successful!', res.data, 'success');
+                            clearForm();
+                            return;
+                        }
+                        swal('Error', res.data, 'error');
+                    },
+                    error: function (err) {
+                        swal('Error', "Oops! An error occured while processing your request.", 'error');
+                    }
+                })
 
-        //    }
-
-
-        //})
+            }
 
 
-        //function clearForm() {
-        //    $("#email").val('');
-        //    $("#phone").val('');
-        //    $("#state").val('');
-        //    $("#surname").val('');
-        //    $("#org").val('');
-        //    $("#suggestion").val('');
-        //    $("#bcc").val('');
-        //    $("#society").val('');
-        //    $("#business").val('');
-        //    $("#worship").val('');
-        //    $("#occupation").val('');
-        //    $("#card").val('');
-        //    $("#maritalstatus").val('');
-        //    $("#othname").val('');
-        //    $("#cpassword").val('');
-        //    $("#password").val('');
-        //    $("#gender").val('');
-        //    $("#dob").val('');
-        //    $("#address").val('');
-        //    $("#picture").val('');
+        })
 
-        //}
+
+        function clearForm() {
+            $("#email").val('');
+            $("#phone").val('');
+            $("#state").val('');
+            $("#surname").val('');
+            $("#org").val('');
+            $("#suggestion").val('');
+            $("#bcc").val('');
+            $("#society").val('');
+            $("#business").val('');
+            $("#worship").val('');
+            $("#occupation").val('');
+            $("#card").val('');
+            $("#maritalstatus").val('');
+            $("#othname").val('');
+            $("#cpassword").val('');
+            $("#password").val('');
+            $("#gender").val('');
+            $("#dob").val('');
+            $("#address").val('');
+            $("#picture").val('');
+
+        }
 
 
 
