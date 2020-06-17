@@ -40,7 +40,7 @@ namespace StFrancis.Controllers
             var file = files[0];
             if(file.Length < 1)
             {
-                return Json(new { staus = false, data = "Please upload your profile photo" });
+                return Json(new { status = false, data = "Please upload your profile photo" });
             }
             var webRootPath = _hostingEnvironment.WebRootPath;
             var folderName = "img";
