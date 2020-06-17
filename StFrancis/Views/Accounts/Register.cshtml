@@ -180,7 +180,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <label>State of Origin<span class="text-danger">*</span></label>
+
+                           
                                         <input asp-for="State" required id="state" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your State of Origin">
                                     </div>
                                     <div class="col-6">
@@ -243,12 +244,30 @@
                                         <input id="picture" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="file" placeholder="Upload your picture">
 
                                     </div>
-                                  
+
                                 </div>
 
-                               
-                            </div> 
+                                <div class="row">
+                                    <div class="col-6">
+
+                                        <button style="background-color: #5a233a;" id="btnsubmit" class="btn  btn-primary prevBtn btn-md  ml-auto " type="button">Register</button>
+
+                                    </div>
+
+
+                                    <div class="col-6">
+
+                                        <p>Already have an acount?</p>
+
+                                        <a class="pull-right" style="margin-top: -48px" ; href="/accounts/login">Login</a>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
                             <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
