@@ -15,6 +15,6 @@ namespace StFrancis.Data
 
         }
 
-        //public DbSet<> MyProperty { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

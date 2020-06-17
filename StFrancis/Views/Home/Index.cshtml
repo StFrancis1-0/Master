@@ -291,7 +291,7 @@
                     <div class="tribe-this-week-widget-wrapper tribe-this-week-widget-horizontal " data-prev-date="2020-01-19" data-next-date="2020-02-02" data-count="3" data-layout="horizontal" data-tax-query="" data-hide-weekends="" data-nonce="f692c2e250">
 
                         <!-- This Week Title -->
-                        <h2 class="tribe-events-page-title">Events of March, 2020</h2>
+                        <h2 class="tribe-events-page-title">Events of @DateTime.Now.ToString("MMMM"), @DateTime.Now.Year</h2>
 
                         <!-- This Week Header Navigation -->
                         <h3 class="tribe-events-visuallyhidden">This Week Navigation</h3>
@@ -309,7 +309,15 @@
                             <div class="tribe-this-week-widget-day tribe-this-week-widget-day-0 this-week-past">
 
                                 <div class="tribe-this-week-widget-header-date">
-                                    <span class="date">Sun 23rd</span>
+                                    @if (DateTime.Now.Day.ToString().EndsWith("3"))
+                                     {
+                                        <span class="date">Sun @DateTime.Now.Day.ToString()rd</span>
+                                     }
+                                    else
+                                    {
+                                        <span class="date">Sun @DateTime.Now.Day.ToString()th </span>
+                                    }
+
                                 </div>
 
                                 <div class="tribe-this-week-widget-day-wrap">
