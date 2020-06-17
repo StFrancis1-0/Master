@@ -185,8 +185,8 @@
                             </div>
                             <div class="col-6">
 
-                                <label>Date of Birth<span class="text-danger">*</span></label>
-                                <input asp-for="DateOfBirth" required id="dob" class="form-control" type="text" placeholder="Eneter your DOB">
+                                        <label>Date of Birth<span class="text-danger">*</span></label>
+                                        <input asp-for="DateOfBirth" required id="dob" class="form-control" type="date" placeholder="Eneter your DOB">
 
                             </div>
                         </div>
@@ -236,12 +236,15 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-12">
-                                <label class="fieldlabels">Upload Your Photo:</label> <input type="file" id="picture" name="pic" accept="image/*"> <label class="fieldlabels">Upload Signature Photo:</label> <input type="file" name="pic" accept="image/*">
-                            </div>
+                                <div class="row">
+                                    <div class="col-12">
 
-                        </div>
+                                        <label>Profile Picture<span class="text-danger">*</span></label>
+                                        <input id="picture" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="file" placeholder="Upload your picture">
+
+                                    </div>
+                                  
+                                </div>
 
 
                     </div>
