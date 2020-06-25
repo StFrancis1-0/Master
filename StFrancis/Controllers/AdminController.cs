@@ -26,6 +26,8 @@ namespace StFrancis.Controllers
 
 
         // GET: Admin/Create
+        [HttpGet]
+        [Route("[action]")]
         public ActionResult Create()
         {
             return View();
@@ -34,13 +36,17 @@ namespace StFrancis.Controllers
         // POST: Admin/Create
         [HttpPost]
         [Route("[action]")]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Event model)
+        public async Task<ActionResult> Create([FromForm]Event model)
         {
             try
             {
                 var request = await  _manager.CreateActivity(model);
-                return Json(new { status = true, data = "Event successfully created" });
+
+                if (request.Item1)
+                {
+                    return Json(new { status = request.Item1, data = "Event successfully created" });
+                }
+                return  Json(new { status = request.Item1, data = request.Item2 });
             }
             catch
             {

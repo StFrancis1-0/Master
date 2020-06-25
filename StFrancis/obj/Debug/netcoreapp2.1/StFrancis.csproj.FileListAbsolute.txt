@@ -204,3 +204,4 @@ C:\Users\User01\source\repos\StFrancis\StFrancis\StFrancis\obj\Debug\netcoreapp2
 C:\Users\User01\source\repos\StFrancis\StFrancis\StFrancis\obj\Debug\netcoreapp2.1\StFrancis.dll
 C:\Users\User01\source\repos\StFrancis\StFrancis\StFrancis\obj\Debug\netcoreapp2.1\StFrancis.pdb
 C:\Users\User01\source\repos\StFrancis\StFrancis\StFrancis\obj\Debug\netcoreapp2.1\StFrancis.csproj.CopyComplete
+C:\Users\User01\source\repos\StFrancis\StFrancis\StFrancis\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Create.g.cshtml.cs

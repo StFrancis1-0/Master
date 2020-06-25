@@ -18,16 +18,16 @@ namespace StFrancis.Services
             _context = context;
         }
 
-        public async Task<Event> CreateActivity(Event model)
+        public async Task<(bool, Event)> CreateActivity(Event model)
         {
             try
             {
                 _context.Events.Add(model);
                 if (await _context.SaveChangesAsync() > 0)
                 {
-                    return model;
+                    return  (true, model);
                 }
-                return null;
+                return (false, null);
             }
             catch (Exception ex)
             {

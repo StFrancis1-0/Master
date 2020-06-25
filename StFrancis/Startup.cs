@@ -56,7 +56,9 @@ namespace StFrancis
             {
                 c.AddPolicy("AllowAll", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             });
+
             services.AddScoped<IUserManager, UserManager>();
+            services.AddScoped<IActivityManager, ActivityManager>();
 
 
         }

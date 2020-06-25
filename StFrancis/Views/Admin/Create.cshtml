@@ -1,0 +1,226 @@
+﻿@model StFrancis.Models.Event
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="container" style="margin-bottom: 90px;  margin-top: 180px;">
+    <form id="msform">
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                <label for="Day">Day<span class="text-danger">*</span></label>
+                <select asp-for="Day" required id="day" class="form-control" type="text">
+                    <option value="">--Please choose an option--</option>
+                    <option value="SUN">Sunday</option>
+                    <option value="MON">Monday</option>
+                    <option value="TUE">Tuesday</option>
+                    <option value="WED">Wednesday</option>
+                    <option value="THUR">Thursday</option>
+                    <option value="FRI">Friday</option>
+                    <option value="SAT">Saturday</option>
+                </select>
+
+            </div>
+            <div class="col-md-6 input-group @*date*@" data-provide="">
+                <label for="Date">Date<span class="text-danger">*</span></label>
+                <input asp-for="Date" required id="date" class="form-control" type="date">
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+            <label>Activity<span class="text-danger">*</span></label>
+            <textarea asp-for="Activity" required id="activity" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" rows="4" placeholder="What are today's activities"></textarea>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                <label>Start Time<span class="text-danger">*</span></label>
+                <select asp-for="StartTime" required id="starttime" class="form-control" type="text">
+                    <option value="">--Please choose an option--</option>
+                    <option value="12:00AM">12:00AM</option>
+                    <option value="12:30AM">12:30AM</option>
+                    <option value="1:00AM">1:00AM</option>
+                    <option value="1:30AM">1:30AM</option>
+                    <option value="2:00AM">2:00AM</option>
+                    <option value="2:30AM">2:30AM</option>
+                    <option value="3:00AM">3:00AM</option>
+                    <option value="3:30AM">3:30AM</option>
+                    <option value="4:00AM">4:00AM</option>
+                    <option value="4:30AM">4:30AM</option>
+                    <option value="5:00AM">5:00AM</option>
+                    <option value="5:30AM">5:30AM</option>
+                    <option value="6:00AM">6:00AM</option>
+                    <option value="6:30AM">6:30AM</option>
+                    <option value="7:00AM">7:00AM</option>
+                    <option value="7:30AM">7:30AM</option>
+                    <option value="8:00AM">8:00AM</option>
+                    <option value="8:30AM">8:30Am</option>
+                    <option value="9:00AM">9:00AM</option>
+                    <option value="9:30AM">9:30AM</option>
+                    <option value="10:00AM">10:00AM</option>
+                    <option value="10:30AM">10:30AM</option>
+                    <option value="11:00AM">11:00AM</option>
+                    <option value="11:30AM">11:30AM</option>
+
+                    <option value="12:00PM">12:00PM</option>
+                    <option value="12:30PM">12:30PM</option>
+                    <option value="1:00PM">1:00PM</option>
+                    <option value="1:30PM">1:30PM</option>
+                    <option value="2:00PM">2:00PM</option>
+                    <option value="2:30PM">2:30PM</option>
+                    <option value="3:00PM">3:00PM</option>
+                    <option value="3:30PM">3:30PM</option>
+                    <option value="4:00PM">4:00PM</option>
+                    <option value="4:30PM">4:30PM</option>
+                    <option value="5:00PM">5:00PM</option>
+                    <option value="5:30PM">5:30PM</option>
+                    <option value="6:00PM">6:00PM</option>
+                    <option value="6:30PM">6:30PM</option>
+                    <option value="7:00PM">7:00PM</option>
+                    <option value="7:30PM">7:30PM</option>
+                    <option value="8:00PM">8:00PM</option>
+                    <option value="8:30PM">8:30PM</option>
+                    <option value="9:00PM">9:00PM</option>
+                    <option value="9:30PM">9:30PM</option>
+                    <option value="10:00PM">10:00PM</option>
+                    <option value="10:30PM">10:30PM</option>
+                    <option value="11:00PM">11:00PM</option>
+                    <option value="11:30PM">11:30PM</option>
+                </select>
+            </div>
+            <div class="col-md-6 form-group">
+                <label>End Time<span class="text-danger">*</span></label>
+                <select asp-for="EndTime" required id="endtime" class="form-control" type="text">
+                    <option value="">--Please choose an option--</option>
+                    <option value="12:00AM">12:00AM</option>
+                    <option value="12:30AM">12:30AM</option>
+                    <option value="1:00AM">1:00AM</option>
+                    <option value="1:30AM">1:30AM</option>
+                    <option value="2:00AM">2:00AM</option>
+                    <option value="2:30AM">2:30AM</option>
+                    <option value="3:00AM">3:00AM</option>
+                    <option value="3:30AM">3:30AM</option>
+                    <option value="4:00AM">4:00AM</option>
+                    <option value="4:30AM">4:30AM</option>
+                    <option value="5:00AM">5:00AM</option>
+                    <option value="5:30AM">5:30AM</option>
+                    <option value="6:00AM">6:00AM</option>
+                    <option value="6:30AM">6:30AM</option>
+                    <option value="7:00AM">7:00AM</option>
+                    <option value="7:30AM">7:30AM</option>
+                    <option value="8:00AM">8:00AM</option>
+                    <option value="8:30AM">8:30Am</option>
+                    <option value="9:00AM">9:00AM</option>
+                    <option value="9:30AM">9:30AM</option>
+                    <option value="10:00AM">10:00AM</option>
+                    <option value="10:30AM">10:30AM</option>
+                    <option value="11:00AM">11:00AM</option>
+                    <option value="11:30AM">11:30AM</option>
+
+                    <option value="12:00PM">12:00PM</option>
+                    <option value="12:30PM">12:30PM</option>
+                    <option value="1:00PM">1:00PM</option>
+                    <option value="1:30PM">1:30PM</option>
+                    <option value="2:00PM">2:00PM</option>
+                    <option value="2:30PM">2:30PM</option>
+                    <option value="3:00PM">3:00PM</option>
+                    <option value="3:30PM">3:30PM</option>
+                    <option value="4:00PM">4:00PM</option>
+                    <option value="4:30PM">4:30PM</option>
+                    <option value="5:00PM">5:00PM</option>
+                    <option value="5:30PM">5:30PM</option>
+                    <option value="6:00PM">6:00PM</option>
+                    <option value="6:30PM">6:30PM</option>
+                    <option value="7:00PM">7:00PM</option>
+                    <option value="7:30PM">7:30PM</option>
+                    <option value="8:00PM">8:00PM</option>
+                    <option value="8:30PM">8:30PM</option>
+                    <option value="9:00PM">9:00PM</option>
+                    <option value="9:30PM">9:30PM</option>
+                    <option value="10:00PM">10:00PM</option>
+                    <option value="10:30PM">10:30PM</option>
+                    <option value="11:00PM">11:00PM</option>
+                    <option value="11:30PM">11:30PM</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-group" id="btnsubmit" style="margin-left: 12px;"><button type="button" class="btn btn-primary">Save</button></div>
+    </form>
+</div>
+
+
+
+
+@section Scripts{
+
+    <script>
+
+        var registerForm = $("#msform");
+        registerForm.validate({
+            messages: {
+                day: {
+                    equalTo: "Please select a day",
+                }
+            }
+        });
+
+        $("#btnsubmit").click(function () {
+            if (registerForm.valid()) {
+                var data = new FormData();
+
+                data.append('Day', $("#day").val());
+                data.append('Date', $("#date").val());
+                data.append('Activity', $("#activity").val());
+                data.append('StartTime', $("#starttime").val());
+                data.append('EndTime', $("#endtime").val());
+
+                
+                $.ajax({
+                    url: "/admin/create",
+                    type: "POST",
+                    data: data,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        if (res.status) {
+                            clearForm();
+                            swal('Success!', res.data, 'success');
+                            clearForm();
+                            return;
+                        }
+                        swal('Error', "Oops! An error occured while processing your request.", 'error');
+                    },
+                    error: function (err) {
+                        swal('Error', "Oops! An error occured while processing your request.", 'error');
+                    }
+                })
+
+            }
+
+
+        })
+
+        function validateForm() {
+
+
+            if (registerForm.valid()) {
+                next();
+            }
+        }
+
+        function clearForm() {
+            $("#day").val(''),
+            $("#date").val(''),
+            $("#activity").val(''),
+            $("#starttime").val(''),
+            $("#endtime").val('')
+
+        }
+
+       
+
+    </script>
+
+
+}
+

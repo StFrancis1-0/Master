@@ -9,7 +9,7 @@ namespace StFrancis.Interfaces
 {
     public interface IActivityManager
     {
-        Task<Event> CreateActivity(Event model);
+        Task<(bool, Event)> CreateActivity(Event model);
         Task<DataModel> GetEVents();
     }
 }
