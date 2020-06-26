@@ -29,7 +29,7 @@
     <link rel='stylesheet' id='molongui-common-framework-css' href='~/wp-content/plugins/molongui-authorship/fw/public/css/mcf-common.58c1.mine7f0.css?ver=1.3.1' type='text/css' media='all' />
     <link rel='stylesheet' id='molongui-authorship-css' href='~/wp-content/plugins/molongui-authorship/public/css/molongui-authorship.219d.min5018.css?ver=3.2.22' type='text/css' media='all' />
     <link rel="stylesheet" href="~/fontawesome-free-5.13.0-web/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" />
     <style id='molongui-authorship-inline-css' type='text/css'>
 
         .molongui-author-box .molongui-author-box-tabs nav.molongui-author-box-tabs-full {
@@ -538,221 +538,131 @@
     </style>
     @RenderSection("Css", required: false)
 </head>
-    <body>
-        <header id="saved-header">
+<body>
+    <header id="saved-header">
 
 
-            <div id="saved-header-top" class="saved-header-no-line saved-header-has-search saved-header-has-icons">
+        <div id="saved-header-top" class="saved-header-no-line saved-header-has-search saved-header-has-icons">
 
-                <div>
+            <div>
 
-                    <div id="saved-header-top-bg"></div>
+                <div id="saved-header-top-bg"></div>
 
-                    <div id="saved-header-top-container" class="saved-centered-large">
+                <div id="saved-header-top-container" class="saved-centered-large">
 
-                        <div id="saved-header-top-inner">
-
-
-                            <div id="saved-logo">
-
-                                <div id="saved-logo-content">
+                    <div id="saved-header-top-inner">
 
 
+                        <div id="saved-logo">
 
-                                    <div id="saved-logo-image">
-
-                                        <a href="/home" style="max-width:px;max-height:px">
-
-                                            <img src="~/wp-content/uploads/2018/08/cropped-francis-icon-dove1.svg" alt="St Francis Catholic Church" id="saved-logo-regular">
+                            <div id="saved-logo-content">
 
 
-                                        </a>
 
-                                    </div>
+                                <div id="saved-logo-image">
 
+                                    <a href="/home" style="max-width:px;max-height:px">
+
+                                        <img src="~/wp-content/uploads/2018/08/cropped-francis-icon-dove1.svg" alt="St Francis Catholic Church" id="saved-logo-regular">
+
+
+                                    </a>
 
                                 </div>
 
-                            </div>
-
-                            <nav id="saved-header-menu">
-
-                                <div id="saved-header-menu-inner">
-
-                                    <ul id="saved-header-menu-content" class="sf-menu">
-                                        <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="/home">Home</a></li>
-                                        <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-76">
-                                            <a href="#">About</a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="#">Who We Are</a></li>
-                                                <li id="menu-item-155" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155"><a href="/home/pastoralteam">Pastoral Team</a></li>
-                                                <li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156"><a href="#">Staff</a></li>
-                                                <li id="menu-item-4758" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4758"><a href="#">Societies</a></li>
-                                                <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="#">Membership</a></li>
-                                                <li id="menu-item-173" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-173"><a href="locations/church-of-the-good-shepherd/index.html">Contact Us</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li id="menu-item-104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-104">
-                                            <a href="#">Connect</a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-234"><a href="#">CMO</a></li>
-                                                <li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="#">CWO</a></li>
-                                                <li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176"><a href="#">CYON</a></li>
-
-                                                <li id="menu-item-3046" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3046"><a href="#">Contact Us</a></li>
-                                            </ul>
-                                        </li>
-                                        <li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-105">
-                                            <a href="#">Whatch us online</a>
-
-                                        </li>
-                                        <li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109">
-                                            <a href="#">Resources</a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="#">Readings</a></li>
-                                                <li id="menu-item-5957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5957"><a href="#">Books</a></li>
-                                                <li id="menu-item-3295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3295"><a href="#">Audio</a></li>
-                                            </ul>
-                                        </li>
-                                        <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="#">Give</a></li>
-                                        <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="#">Blog</a></li>
-                                        <li id="menu-item-2465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2465"><a href="#">Member Login</a></li>
-                                    </ul>
-                                </div>
-
-                            </nav>
-
-
-                            <div id="saved-header-search" role="search">
-
-                                <div id="saved-header-search-opened">
-
-
-                                    <div class="saved-search-form">
-
-                                        <form method="get" action="#">
-
-                                            <label class="screen-reader-text">Search</label>
-
-                                            <div class="saved-search-field">
-                                                <input type="text" name="s" />
-                                            </div>
-
-                                            <a href="#" onClick="jQuery( this ).parent( 'form' ).submit(); return false;" class="saved-search-button saved-icon saved-icon-search-button mdi mdi-magnify"></a>
-
-                                        </form>
-
-                                    </div>
-                                    <a href="#" id="saved-header-search-close" class="saved-icon saved-icon-search-cancel mdi mdi-close"></a>
-
-                                </div>
-
-                                <div id="saved-header-search-closed">
-                                    <a href="#" id="saved-header-search-open" class="saved-icon saved-icon-search-button mdi mdi-magnify"></a>
-                                </div>
 
                             </div>
-
-
-
-                            <div id="saved-header-icons-divider">
-                                <div id="saved-header-icons-divider-line"></div>
-                            </div>
-
-
-
-                            <div id="saved-header-icons">
-                                <ul class="saved-list-icons">
-                                    <li><a href="#" class="mdi mdi-facebook-box" title="Facebook" target="_blank"></a></li>
-                                    <li><a href="#" class="mdi mdi-microphone" title="Podcast" target="_blank"></a></li>
-                                </ul>
-                            </div>
-
 
                         </div>
 
-                    </div>
+                        <nav id="saved-header-menu">
 
-                </div>
+                            <div id="saved-header-menu-inner">
 
-                <div id="saved-header-mobile-menu"></div>
-
-            </div>
-
-        </header>
-
-        <main>
-            @RenderBody()
-        </main>
-        <footer id="saved-footer" class="saved-footer-has-location saved-footer-has-map saved-footer-has-icons saved-footer-has-notice saved-footer-has-menu saved-footer-no-submenu saved-footer-has-widgets">
-
-
-            <div id="saved-footer-widgets-row" class="saved-widgets-row saved-bg-contrast">
-
-                <div class="saved-widgets-row-inner saved-centered-large">
-
-                    <div class="saved-widgets-row-content">
-
-                        <aside id="custom_html-4" class="widget_text saved-widget widget_custom_html"><div class="textwidget custom-html-widget">Enter your email address to subscribe to our newsletter.</div></aside><aside id="gform_widget-3" class="saved-widget gform_widget">
-                            <link rel='stylesheet' id='gforms_reset_css-css' href='~/wp-content/plugins/gravityforms/css/formreset.min8674.css?ver=2.4.16' type='text/css' media='all' />
-                            <link rel='stylesheet' id='gforms_formsmain_css-css' href='~/wp-content/plugins/gravityforms/css/formsmain.min8674.css?ver=2.4.16' type='text/css' media='all' />
-                            <link rel='stylesheet' id='gforms_ready_class_css-css' href='~/wp-content/plugins/gravityforms/css/readyclass.min8674.css?ver=2.4.16' type='text/css' media='all' />
-                            <link rel='stylesheet' id='gforms_browsers_css-css' href='~/wp-content/plugins/gravityforms/css/browsers.min8674.css?ver=2.4.16' type='text/css' media='all' />
-
-                            <div class='gf_browser_chrome gform_wrapper gf_simple_horizontal_wrapper' id='gform_wrapper_2'>
-                                <form method='post' enctype='multipart/form-data' id='gform_2' class='gf_simple_horizontal' action='#'>
-                                    <div class='gform_body'>
-                                        <ul id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below'>
-                                            <li id='field_2_1' class='gfield gf_inline gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible'>
-                                                <label class='gfield_label' for='input_2_1'>Email<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_email'>
-                                                    <input name='input_1' id='input_2_1' type='text' value='' class='medium' tabindex='30' placeholder='Your email address' aria-required="true" aria-invalid="false" />
-                                                </div>
-                                            </li>
-                                            <li id='field_2_2' class='gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible'><label class='gfield_label' for='input_2_2'>Comments</label><div class='ginput_container'><input name='input_2' id='input_2_2' type='text' value='' /></div><div class='gfield_description' id='gfield_description__2'>This field is for validation purposes and should be left unchanged.</div></li>
+                                <ul id="saved-header-menu-content" class="sf-menu">
+                                    <li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="/home">Home</a></li>
+                                    <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-76">
+                                        <a href="#">About</a>
+                                        <ul class="sub-menu">
+                                            <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="#">Who We Are</a></li>
+                                            <li id="menu-item-155" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155"><a href="/home/pastoralteam">Pastoral Team</a></li>
+                                            <li id="menu-item-156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-156"><a href="#">Staff</a></li>
+                                            <li id="menu-item-4758" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4758"><a href="#">Societies</a></li>
+                                            <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="#">Membership</a></li>
+                                            <li id="menu-item-173" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-173"><a href="locations/church-of-the-good-shepherd/index.html">Contact Us</a></li>
                                         </ul>
-                                    </div>
-                                    <div class='gform_footer top_label'>
-                                        <input type='submit' id='gform_submit_button_2' class='gform_button button' value='Subscribe Now' tabindex='31' onclick='if(window["gf_submitting_2"]){return false;}  window["gf_submitting_2"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_2"]){return false;} window["gf_submitting_2"]=true;  jQuery("#gform_2").trigger("submit",[true]); }' />
-                                        <input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
-                                        <input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+                                    </li>
 
-                                        <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
-                                        <input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsImFlNjVjMzMyM2MxN2M1YWVkMmJkY2JjNmUzNTNmZTk0Il0=' />
-                                        <input type='hidden' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
-                                        <input type='hidden' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
-                                        <input type='hidden' name='gform_field_values' value='' />
+                                    <li id="menu-item-104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-104">
+                                        <a href="#">Connect</a>
+                                        <ul class="sub-menu">
+                                            <li id="menu-item-234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-234"><a href="#">CMO</a></li>
+                                            <li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="#">CWO</a></li>
+                                            <li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176"><a href="#">CYON</a></li>
 
-                                    </div>
-                                </form>
+                                            <li id="menu-item-3046" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3046"><a href="#">Contact Us</a></li>
+                                        </ul>
+                                    </li>
+                                    <li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-105">
+                                        <a href="#">Whatch us online</a>
+
+                                    </li>
+                                    <li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109">
+                                        <a href="#">Resources</a>
+                                        <ul class="sub-menu">
+                                            <li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="#">Readings</a></li>
+                                            <li id="menu-item-5957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5957"><a href="#">Books</a></li>
+                                            <li id="menu-item-3295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3295"><a href="#">Audio</a></li>
+                                        </ul>
+                                    </li>
+                                    <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="#">Give</a></li>
+                                    <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="#">Blog</a></li>
+                                    <li id="menu-item-2465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2465"><a href="#">Member Login</a></li>
+                                </ul>
                             </div>
-                            <script type='text/javascript'>
-                                jQuery(document).bind('gform_post_render', function (event, formId, currentPage) {
-                                    if (formId == 2) {
-                                        if (typeof Placeholders != 'undefined') {
-                                            Placeholders.enable();
-                                        }
-                                    }
-                                }); jQuery(document).bind('gform_post_conditional_logic', function (event, formId, fields, isInit) { });</script>
-                            <script type='text/javascript'>jQuery(document).ready(function () { jQuery(document).trigger('gform_post_render', [2, 1]) });</script>
-                        </aside>
-                    </div>
 
-                </div>
-
-            </div>
+                        </nav>
 
 
+                        <div id="saved-header-search" role="search">
 
-            <div id="saved-footer-bottom" class="saved-color-main-bg">
-
-                <div id="saved-footer-bottom-inner" class="saved-centered-large">
-
-
-                    <div id="saved-footer-icons-notice">
+                            <div id="saved-header-search-opened">
 
 
-                        <div id="saved-footer-icons">
+                                <div class="saved-search-form">
+
+                                    <form method="get" action="#">
+
+                                        <label class="screen-reader-text">Search</label>
+
+                                        <div class="saved-search-field">
+                                            <input type="text" name="s" />
+                                        </div>
+
+                                        <a href="#" onClick="jQuery( this ).parent( 'form' ).submit(); return false;" class="saved-search-button saved-icon saved-icon-search-button mdi mdi-magnify"></a>
+
+                                    </form>
+
+                                </div>
+                                <a href="#" id="saved-header-search-close" class="saved-icon saved-icon-search-cancel mdi mdi-close"></a>
+
+                            </div>
+
+                            <div id="saved-header-search-closed">
+                                <a href="#" id="saved-header-search-open" class="saved-icon saved-icon-search-button mdi mdi-magnify"></a>
+                            </div>
+
+                        </div>
+
+
+
+                        <div id="saved-header-icons-divider">
+                            <div id="saved-header-icons-divider-line"></div>
+                        </div>
+
+
+
+                        <div id="saved-header-icons">
                             <ul class="saved-list-icons">
                                 <li><a href="#" class="mdi mdi-facebook-box" title="Facebook" target="_blank"></a></li>
                                 <li><a href="#" class="mdi mdi-microphone" title="Podcast" target="_blank"></a></li>
@@ -760,106 +670,197 @@
                         </div>
 
 
-
-                        <div id="saved-footer-notice">
-                            © @DateTime.Now.Year St Francis Orgun · Site by <a href="http://osofit.com/" target="_blank" rel="nofollow">Osoftit</a> · <a href="credits/index.html">Thanks</a>
-                        </div>
-
-
                     </div>
-
-
-
-                    <nav id="saved-footer-menu">
-                        <ul id="saved-footer-menu-content" class="">
-                            <li id="menu-item-465" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-465"><a href="#">New Here</a></li>
-                            <li id="menu-item-470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-470"><a href="#">About</a></li>
-                            <li id="menu-item-471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-471"><a href="#">Gather</a></li>
-                            <li id="menu-item-472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-472"><a href="#">Connect</a></li>
-                            <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="#">Serve</a></li>
-                            <li id="menu-item-474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474"><a href="#">Resources</a></li>
-                            <li id="menu-item-475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="#">Support Us</a></li>
-                            <li id="menu-item-752" class="saved-menu-button menu-item menu-item-type-custom menu-item-object-custom menu-item-752"><a href="#">Member Login</a></li>
-                        </ul>
-                    </nav>
-
 
                 </div>
 
             </div>
 
+            <div id="saved-header-mobile-menu"></div>
 
-        </footer>
+        </div>
 
-        <script>
-            var refTagger = {
-                settings: {
-                    bibleVersion: "ESV",
-                    libronixBibleVersion: "ESV",
-                    addLogosLink: false,
-                    appendIconToLibLinks: false,
-                    libronixLinkIcon: "dark",
-                    noSearchClassNames: ["commentList"],
-                    useTooltip: true,
-                    noSearchTagNames: ["h1", "h2", "h3"],
-                    linksOpenNewWindow: true,
-                    convertHyperlinks: true,
-                    caseInsensitive: false,
-                    tagChapters: false
-                }
-            };
+    </header>
 
-            (function (d, t) {
-                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                g.src = '../api.reftagger.com/v2/reftagger.js';
-                s.parentNode.insertBefore(g, s);
-            }(document, 'script'));
-        </script>
-        <script>
-            (function (body) {
-                'use strict';
-                body.className = body.className.replace(/\btribe-no-js\b/, 'tribe-js');
-            })(document.body);
-        </script>
-        <link rel='stylesheet' id='widget-calendar-pro-style-css' href='~/wp-content/plugins/events-calendar-pro/src/resources/css/widget-theme.min125b.css?ver=4.7.4' type='text/css' media='all' />
-        <link rel='stylesheet' id='mediaelement-css' href='~/wp-includes/js/mediaelement/mediaelementplayer-legacy.minc270.css?ver=4.2.13-9993131' type='text/css' media='all' />
-        <link rel='stylesheet' id='wp-mediaelement-css' href='~/wp-includes/js/mediaelement/wp-mediaelement.min9dff.css?ver=5.3.2' type='text/css' media='all' />
-        <script type='text/javascript' src='../cdn.jsdelivr.net/npm/css-element-queries%401.2.0/src/ResizeSensor.min7359.js?ver=1.2.0'></script>
-        <script type='text/javascript' src='../cdn.jsdelivr.net/npm/css-element-queries%401.2.0/src/ElementQueries.min7359.js?ver=1.2.0'></script>
-        <script type='text/javascript'>
-            /* <![CDATA[ */
-            var molongui_authorship = { "byline_separator": ", ", "byline_last_separator": " and ", "byline_link_title": "View all posts by" };
-            /* ]]> */
-        </script>
-        <script type='text/javascript' src='~/wp-content/plugins/molongui-authorship/public/js/molongui-authorship.9ecb.min5018.js?ver=3.2.22'></script>
-        <script type='text/javascript' src='~/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.minb95e.js?ver=2.0.3'></script>
-        <script type='text/javascript' src='~/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min2846.js?ver=1.5.5'></script>
-        <script type='text/javascript' src='~/wp-includes/js/wp-embed.min9dff.js?ver=5.3.2'></script>
-        <script type='text/javascript' src='~/wp-content/themes/saved/js/lib/jquery.vide.min7ef2.js?ver=1.5'></script>
-        <script type='text/javascript' src='http://maps.googleapis.com/maps/api/js?key=AIzaSyA62frIZyZCSczVkV7z1U4q40zkWqMInFw'></script>
-        <script type='text/javascript' src='~/wp-content/themes/saved/framework/js/maps61da.js?ver=2.6.2'></script>
-        <script type='text/javascript'>
-            /* <![CDATA[ */
-            var tribe_this_week = { "ajaxurl": "https:\/\/cgsonline.org\/wp-admin\/admin-ajax.php" };
-            /* ]]> */
-        </script>
-        <script type='text/javascript' src='~/wp-content/plugins/events-calendar-pro/src/resources/js/widget-this-week.min125b.js?ver=4.7.4'></script>
+    <main>
+        @RenderBody()
+    </main>
+    <footer id="saved-footer" class="saved-footer-has-location saved-footer-has-map saved-footer-has-icons saved-footer-has-notice saved-footer-has-menu saved-footer-no-submenu saved-footer-has-widgets">
 
-        <script type='text/javascript' src='~/wp-includes/js/mediaelement/mediaelement-and-player.minc270.js?ver=4.2.13-9993131'></script>
-        <script type='text/javascript' src='~/wp-includes/js/mediaelement/mediaelement-migrate.min9dff.js?ver=5.3.2'></script>
-        <script type='text/javascript'>
-            /* <![CDATA[ */
-            var _wpmejsSettings = { "pluginPath": "\/wp-includes\/js\/mediaelement\/", "classPrefix": "mejs-", "stretching": "responsive" };
-/* ]]> */
-        </script>
-        <script type='text/javascript' src='~/wp-includes/js/mediaelement/wp-mediaelement.min9dff.js?ver=5.3.2'></script>
-        <script type='text/javascript' src='~/wp-content/plugins/gravityforms/js/placeholders.jquery.min8674.js?ver=2.4.16'></script>
-        <script type="text/javascript" src="~/js/site.min.js"></script>
-        <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="~/sweetalert/sweetalert.min.js"></script>
-       
-        @RenderSection("Scripts", required: false)
 
-    </body>
+        <div id="saved-footer-widgets-row" class="saved-widgets-row saved-bg-contrast">
+
+            <div class="saved-widgets-row-inner saved-centered-large">
+
+                <div class="saved-widgets-row-content">
+
+                    <aside id="custom_html-4" class="widget_text saved-widget widget_custom_html"><div class="textwidget custom-html-widget">Enter your email address to subscribe to our newsletter.</div></aside><aside id="gform_widget-3" class="saved-widget gform_widget">
+                        <link rel='stylesheet' id='gforms_reset_css-css' href='~/wp-content/plugins/gravityforms/css/formreset.min8674.css?ver=2.4.16' type='text/css' media='all' />
+                        <link rel='stylesheet' id='gforms_formsmain_css-css' href='~/wp-content/plugins/gravityforms/css/formsmain.min8674.css?ver=2.4.16' type='text/css' media='all' />
+                        <link rel='stylesheet' id='gforms_ready_class_css-css' href='~/wp-content/plugins/gravityforms/css/readyclass.min8674.css?ver=2.4.16' type='text/css' media='all' />
+                        <link rel='stylesheet' id='gforms_browsers_css-css' href='~/wp-content/plugins/gravityforms/css/browsers.min8674.css?ver=2.4.16' type='text/css' media='all' />
+
+                        <div class='gf_browser_chrome gform_wrapper gf_simple_horizontal_wrapper' id='gform_wrapper_2'>
+                            <form method='post' enctype='multipart/form-data' id='gform_2' class='gf_simple_horizontal' action='#'>
+                                <div class='gform_body'>
+                                    <ul id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below'>
+                                        <li id='field_2_1' class='gfield gf_inline gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible'>
+                                            <label class='gfield_label' for='input_2_1'>Email<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_email'>
+                                                <input name='input_1' id='input_2_1' type='text' value='' class='medium' tabindex='30' placeholder='Your email address' aria-required="true" aria-invalid="false" />
+                                            </div>
+                                        </li>
+                                        <li id='field_2_2' class='gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible'><label class='gfield_label' for='input_2_2'>Comments</label><div class='ginput_container'><input name='input_2' id='input_2_2' type='text' value='' /></div><div class='gfield_description' id='gfield_description__2'>This field is for validation purposes and should be left unchanged.</div></li>
+                                    </ul>
+                                </div>
+                                <div class='gform_footer top_label'>
+                                    <input type='submit' id='gform_submit_button_2' class='gform_button button' value='Subscribe Now' tabindex='31' onclick='if(window["gf_submitting_2"]){return false;}  window["gf_submitting_2"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_2"]){return false;} window["gf_submitting_2"]=true;  jQuery("#gform_2").trigger("submit",[true]); }' />
+                                    <input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
+                                    <input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+
+                                    <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+                                    <input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsImFlNjVjMzMyM2MxN2M1YWVkMmJkY2JjNmUzNTNmZTk0Il0=' />
+                                    <input type='hidden' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
+                                    <input type='hidden' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
+                                    <input type='hidden' name='gform_field_values' value='' />
+
+                                </div>
+                            </form>
+                        </div>
+                        <script type='text/javascript'>
+                            jQuery(document).bind('gform_post_render', function (event, formId, currentPage) {
+                                if (formId == 2) {
+                                    if (typeof Placeholders != 'undefined') {
+                                        Placeholders.enable();
+                                    }
+                                }
+                            }); jQuery(document).bind('gform_post_conditional_logic', function (event, formId, fields, isInit) { });</script>
+                        <script type='text/javascript'>jQuery(document).ready(function () { jQuery(document).trigger('gform_post_render', [2, 1]) });</script>
+                    </aside>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="saved-footer-bottom" class="saved-color-main-bg">
+
+            <div id="saved-footer-bottom-inner" class="saved-centered-large">
+
+
+                <div id="saved-footer-icons-notice">
+
+
+                    <div id="saved-footer-icons">
+                        <ul class="saved-list-icons">
+                            <li><a href="#" class="mdi mdi-facebook-box" title="Facebook" target="_blank"></a></li>
+                            <li><a href="#" class="mdi mdi-microphone" title="Podcast" target="_blank"></a></li>
+                        </ul>
+                    </div>
+
+
+
+                    <div id="saved-footer-notice">
+                        © @DateTime.Now.Year St Francis Orgun · Site by <a href="http://osofit.com/" target="_blank" rel="nofollow">Osoftit</a> · <a href="credits/index.html">Thanks</a>
+                    </div>
+
+
+                </div>
+
+
+
+                <nav id="saved-footer-menu">
+                    <ul id="saved-footer-menu-content" class="">
+                        <li id="menu-item-465" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-465"><a href="#">New Here</a></li>
+                        <li id="menu-item-470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-470"><a href="#">About</a></li>
+                        <li id="menu-item-471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-471"><a href="#">Gather</a></li>
+                        <li id="menu-item-472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-472"><a href="#">Connect</a></li>
+                        <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="#">Serve</a></li>
+                        <li id="menu-item-474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474"><a href="#">Resources</a></li>
+                        <li id="menu-item-475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="#">Support Us</a></li>
+                        <li id="menu-item-752" class="saved-menu-button menu-item menu-item-type-custom menu-item-object-custom menu-item-752"><a href="#">Member Login</a></li>
+                    </ul>
+                </nav>
+
+
+            </div>
+
+        </div>
+
+
+    </footer>
+
+    <script>
+        var refTagger = {
+            settings: {
+                bibleVersion: "ESV",
+                libronixBibleVersion: "ESV",
+                addLogosLink: false,
+                appendIconToLibLinks: false,
+                libronixLinkIcon: "dark",
+                noSearchClassNames: ["commentList"],
+                useTooltip: true,
+                noSearchTagNames: ["h1", "h2", "h3"],
+                linksOpenNewWindow: true,
+                convertHyperlinks: true,
+                caseInsensitive: false,
+                tagChapters: false
+            }
+        };
+
+        (function (d, t) {
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.src = '../api.reftagger.com/v2/reftagger.js';
+            s.parentNode.insertBefore(g, s);
+        }(document, 'script'));
+    </script>
+    <script>
+        (function (body) {
+            'use strict';
+            body.className = body.className.replace(/\btribe-no-js\b/, 'tribe-js');
+        })(document.body);
+    </script>
+    <link rel='stylesheet' id='widget-calendar-pro-style-css' href='~/wp-content/plugins/events-calendar-pro/src/resources/css/widget-theme.min125b.css?ver=4.7.4' type='text/css' media='all' />
+    <link rel='stylesheet' id='mediaelement-css' href='~/wp-includes/js/mediaelement/mediaelementplayer-legacy.minc270.css?ver=4.2.13-9993131' type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-mediaelement-css' href='~/wp-includes/js/mediaelement/wp-mediaelement.min9dff.css?ver=5.3.2' type='text/css' media='all' />
+    <script type='text/javascript' src='../cdn.jsdelivr.net/npm/css-element-queries%401.2.0/src/ResizeSensor.min7359.js?ver=1.2.0'></script>
+    <script type='text/javascript' src='../cdn.jsdelivr.net/npm/css-element-queries%401.2.0/src/ElementQueries.min7359.js?ver=1.2.0'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var molongui_authorship = { "byline_separator": ", ", "byline_last_separator": " and ", "byline_link_title": "View all posts by" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/wp-content/plugins/molongui-authorship/public/js/molongui-authorship.9ecb.min5018.js?ver=3.2.22'></script>
+    <script type='text/javascript' src='~/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.minb95e.js?ver=2.0.3'></script>
+    <script type='text/javascript' src='~/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min2846.js?ver=1.5.5'></script>
+    <script type='text/javascript' src='~/wp-includes/js/wp-embed.min9dff.js?ver=5.3.2'></script>
+    <script type='text/javascript' src='~/wp-content/themes/saved/js/lib/jquery.vide.min7ef2.js?ver=1.5'></script>
+    <script type='text/javascript' src='http://maps.googleapis.com/maps/api/js?key=AIzaSyA62frIZyZCSczVkV7z1U4q40zkWqMInFw'></script>
+    <script type='text/javascript' src='~/wp-content/themes/saved/framework/js/maps61da.js?ver=2.6.2'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var tribe_this_week = { "ajaxurl": "https:\/\/cgsonline.org\/wp-admin\/admin-ajax.php" };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/wp-content/plugins/events-calendar-pro/src/resources/js/widget-this-week.min125b.js?ver=4.7.4'></script>
+
+    <script type='text/javascript' src='~/wp-includes/js/mediaelement/mediaelement-and-player.minc270.js?ver=4.2.13-9993131'></script>
+    <script type='text/javascript' src='~/wp-includes/js/mediaelement/mediaelement-migrate.min9dff.js?ver=5.3.2'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var _wpmejsSettings = { "pluginPath": "\/wp-includes\/js\/mediaelement\/", "classPrefix": "mejs-", "stretching": "responsive" };
+               /* ]]> */
+    </script>
+    <script type='text/javascript' src='~/wp-includes/js/mediaelement/wp-mediaelement.min9dff.js?ver=5.3.2'></script>
+    <script type='text/javascript' src='~/wp-content/plugins/gravityforms/js/placeholders.jquery.min8674.js?ver=2.4.16'></script>
+    <script type="text/javascript" src="~/js/site.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="~/sweetalert/sweetalert.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
 </html>

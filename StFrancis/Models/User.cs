@@ -8,6 +8,7 @@ namespace StFrancis.Models
 {
     public class User: IdentityUser
     {
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public string Surname { get; set; }
         public string OtherNames { get; set; }
         public string ResidentialAddress { get; set; }

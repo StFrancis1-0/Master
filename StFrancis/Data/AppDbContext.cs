@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using StFrancis.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace StFrancis.Data
 {
@@ -15,6 +12,6 @@ namespace StFrancis.Data
 
         }
 
-        //public DbSet<> MyProperty { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }
