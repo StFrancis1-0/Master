@@ -13,7 +13,7 @@ namespace StFrancis.Models
         public string OtherNames { get; set; }
         public string ResidentialAddress { get; set; }
         public string Gender { get; set; }
-        public int DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string ImagePath { get; set; }
         public string WorshipCenter { get; set; }
         public string Organisation { get; set; }

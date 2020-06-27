@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StFrancis.Migrations
 {
-    public partial class First : Migration
+    public partial class userDobUpdate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,16 +41,45 @@ namespace StFrancis.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Address = table.Column<string>(nullable: true),
-                    Sex = table.Column<string>(nullable: true),
-                    DateOfBirth = table.Column<int>(nullable: false),
-                    ImagePath = table.Column<string>(nullable: true)
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Surname = table.Column<string>(nullable: true),
+                    OtherNames = table.Column<string>(nullable: true),
+                    ResidentialAddress = table.Column<string>(nullable: true),
+                    Gender = table.Column<string>(nullable: true),
+                    DateOfBirth = table.Column<DateTime>(nullable: false),
+                    ImagePath = table.Column<string>(nullable: true),
+                    WorshipCenter = table.Column<string>(nullable: true),
+                    Organisation = table.Column<string>(nullable: true),
+                    Society = table.Column<string>(nullable: true),
+                    Occupation = table.Column<string>(nullable: true),
+                    NatureOfWork = table.Column<string>(nullable: true),
+                    StateOfOrigin = table.Column<string>(nullable: true),
+                    BCC = table.Column<string>(nullable: true),
+                    MembershipCardNumber = table.Column<string>(nullable: true),
+                    MaritalStatus = table.Column<string>(nullable: true),
+                    Suggestion = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Events",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    Day = table.Column<string>(nullable: true),
+                    Date = table.Column<string>(nullable: true),
+                    StartTime = table.Column<string>(nullable: true),
+                    EndTime = table.Column<string>(nullable: true),
+                    Activity = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Events", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,6 +244,9 @@ namespace StFrancis.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Events");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

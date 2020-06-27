@@ -71,6 +71,11 @@ namespace StFrancis.Controllers
                 file.CopyTo(stream);
             }
 
+            //if (registerVm.Surname == "" || registerVm.OtherNames == "")
+            //{
+            //    return Json(new { status = false, data = "Please enter your Surname and Othername" });
+            //}
+
             var result = await _userManager.Register(registerVm);
             if(result.Item1)
             {

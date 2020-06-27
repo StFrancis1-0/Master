@@ -67,3 +67,4 @@ C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\StFr
 C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\StFrancis.dll
 C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\StFrancis.pdb
 C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\StFrancis.csproj.CopyComplete
+C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\Razor\Views\Admin\Create.g.cshtml.cs

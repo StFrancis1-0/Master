@@ -129,6 +129,29 @@ namespace StFrancis.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("StFrancis.Models.Event", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Activity");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("Date");
+
+                    b.Property<string>("Day");
+
+                    b.Property<string>("EndTime");
+
+                    b.Property<string>("StartTime");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Events");
+                });
+
             modelBuilder.Entity("StFrancis.Models.User", b =>
                 {
                     b.Property<string>("Id")
@@ -141,7 +164,9 @@ namespace StFrancis.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<int>("DateOfBirth");
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<DateTime>("DateOfBirth");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);

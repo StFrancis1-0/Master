@@ -25,7 +25,7 @@ namespace StFrancis.ViewModel
         [Required(ErrorMessage = "Please enter your sex")]
         public string Sex { get; set; }
         [Required(ErrorMessage = "Please enter your date of birth")]
-        public int DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string ImagePath { get; set; }
         [Required(ErrorMessage = "Please select your worship center")]
         public string WorshipCenter { get; set; }

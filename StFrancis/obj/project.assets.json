@@ -12596,23 +12596,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User01\\.nuget\\packages\\": {},
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User01\\source\\repos\\StFrancis\\StFrancis\\StFrancis\\StFrancis.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\St-Francis-Web\\StFrancis\\StFrancis.csproj",
       "projectName": "StFrancis",
-      "projectPath": "C:\\Users\\User01\\source\\repos\\StFrancis\\StFrancis\\StFrancis\\StFrancis.csproj",
-      "packagesPath": "C:\\Users\\User01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User01\\source\\repos\\StFrancis\\StFrancis\\StFrancis\\obj\\",
+      "projectPath": "C:\\Users\\HP\\source\\repos\\St-Francis-Web\\StFrancis\\StFrancis.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\source\\repos\\St-Francis-Web\\StFrancis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12648,6 +12648,7 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
