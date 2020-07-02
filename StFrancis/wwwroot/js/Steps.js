@@ -11,8 +11,8 @@
 
     setProgressBar(current);
 
-    $(".next").click(function () {
-
+    $(".next").click(function (e) {
+        e.preventDefault();
         current_fs = $(this).parent();
         next_fs = $(this).parent().next();
 
@@ -38,8 +38,8 @@
         setProgressBar(++current);
     });
 
-    $(".previous").click(function () {
-
+    $(".previous").click(function (e) {
+        e.preventDefault();
         current_fs = $(this).parent();
         previous_fs = $(this).parent().prev();
 

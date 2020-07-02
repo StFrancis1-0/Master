@@ -83,7 +83,21 @@
 
                                     <div class="col-6">
                                         <label>BCC</label>
-                                        <input asp-for="BCC" id="bcc" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text" placeholder="Your BCC here">
+                                        <select asp-for="BCC" required id="bcc" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-6 g-px-15" type="text">
+                                            <option value="">--Please choose an option--</option>
+                                            <option value="Zone1">Zone1 (Ibijoke to Juli)</option>
+                                            <option value="Zone2">Zone2 (Ola-Adesega to Under bridge)</option>
+                                            <option value="Zone3">Zone3 (Sanyaolu,Olarenwaju to Police post)</option>
+                                            <option value="Zone4">Zone4 (Fashade,Oregunwa,Olarenwaju to High School)</option>
+                                            <option value="Zone5">Zone5 (Olusosun)</option>
+                                            <option value="Zone6">Zone6 (Alausa)</option>
+                                            <option value="Zone7">Zone7 (Diaspora)</option>
+                                            <option value="OBAJIMI BCC ">OBAJIMI BCC </option>
+                                            <option value="FOLAWIYO BCC">FOLAWIYO BCC</option>
+                                            <option value="ANAKOYA BCC">ANAKOYA BCC</option>
+                                            <option value="TAIKE BCC">TAIKE BCC</option>
+                                        </select>
+
 
                                     </div>
 
@@ -155,9 +169,9 @@
                                     </div>
                                 </div>
 
-                               
+                                
                             </div> 
-                            <input type="button" name="next" class="next action-button" value="Next"/>
+                            <input type="button" name="next" class="next action-button" value="Next" style="margin-right: 20px;" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
@@ -264,7 +278,7 @@
 
 
                             </div>
-                            <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            <input type="button" name="next" class="next action-button" value="Next" style="margin-right: 20px;" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous"style="margin-right: 20px;" />
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
