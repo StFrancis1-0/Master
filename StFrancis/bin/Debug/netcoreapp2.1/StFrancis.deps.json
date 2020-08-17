@@ -11,7 +11,7 @@
       "NETCOREAPP2_1"
     ],
     "languageVersion": "",
-    "platform": "",
+    "platform": "x64",
     "allowUnsafe": false,
     "warningsAsErrors": false,
     "optimize": false,

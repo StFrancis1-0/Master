@@ -12,6 +12,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using MimeKit;
 using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace StFrancis.Services
 {
@@ -19,16 +21,18 @@ namespace StFrancis.Services
     {
         private readonly AppDbContext _context;
         private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signinManager;
         private readonly IConfiguration _configuration;
         public string email = "";
         public string fullName = ""; 
 
 
-        public UserManager(AppDbContext context, UserManager<User> userManager, IConfiguration configuration)
+        public UserManager(AppDbContext context, UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration)
         {
            _context = context;
            _userManager = userManager;
            _configuration = configuration;
+            _signinManager = signInManager;
         }
         public async Task<Tuple<bool, string, AuthResponse>> AuthenticateUser(AuthVm login)
         {
@@ -85,13 +89,24 @@ namespace StFrancis.Services
                     ImagePath = user.ImagePath
                 };
 
-                return new Tuple<bool, string, AuthResponse>(true, " ", response);
+               var result = await _signinManager.PasswordSignInAsync(login.Phone_Email, login.Password, false, false);
+
+       
+
+                return new Tuple<bool, string, AuthResponse>(result.Succeeded, " ", response);
             }
             catch (Exception ex)
             {
 
                 throw new Exception(ex.Message);
             }
+        }
+
+        public async Task<bool> Signout()
+        {
+            await _signinManager.SignOutAsync();
+
+            return true;
         }
 
         public async Task<Tuple<bool, string>> Register(RegisterVm registerVm)
