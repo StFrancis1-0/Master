@@ -10,7 +10,10 @@ namespace StFrancis.ViewModel
         public string Id { get; set; }
         public string Surname { get; set; }
         public string OtherName { get; set; }
+        public string DisplayName { get; set; }
+        public string Occupation { get; set; }
         public string Society { get; set; }
+        public string Parish { get; set; }
         public string ProfileImage { get; set; } 
 
     }

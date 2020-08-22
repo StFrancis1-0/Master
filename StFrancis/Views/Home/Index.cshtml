@@ -2,6 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+
 <main id="saved-home-main" class="container">
 
 
@@ -13,7 +16,10 @@
 
         <div id="saved-bg-section-video">
 
-            <div id="saved-bg-section-video-vide" data-video-url="~/wp-content/uploads/2018/08/churchvid1.mp4"></div>
+            <div id="saved-bg-section-video-vide" data-video-url="/wp-content/uploads/2018/08/churchvid.mp4"></div>
+
+
+          
 
             <div id="saved-bg-section-video-color" class="saved-color-main-bg" style="opacity: 0.1;"></div>
 
@@ -43,7 +49,7 @@
 
                     <ul class="saved-buttons-list saved-buttons-list-large">
 
-                        <li><a href="/admin/create" class="">What to Expect</a></li>
+                        <li><a href="#saved-home-section-4" class="">What to Expect</a></li>
 
                     </ul>
 
@@ -85,7 +91,7 @@
 
                         <ul id="saved-map-section-buttons" class="saved-buttons-list saved-buttons-list-close saved-map-section-single-location">
 
-                            <li class="saved-map-button-more-item"><a href="locations/church-of-the-good-shepherd/index.html" class="saved-map-button-more">More Info</a></li>
+                            <li class="saved-map-button-more-item"><a href="#" class="saved-map-button-more">More Info</a></li>
 
                             <li><a href="https://www.google.ng/maps/dir//St+Francis+Catholic+Church/6.5974725,3.2936939,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x103b924673f1c9cd:0x740850a453937c52!2m2!1d3.3637345!2d6.5974774" class="saved-map-button-directions" target="_blank">Directions</a></li>
 
@@ -147,6 +153,13 @@
 
         </div>
 
+
+        @*<div id="saved-map-section-map">
+
+            <div id="saved-map-section-canvas" class="ctfw-google-map" data-ctfw-map-lat="6.597540" data-ctfw-map-lng="3.363746" data-ctfw-map-type="ROADMAP" data-ctfw-map-zoom="11" data-ctfw-map-marker="" data-ctfw-map-center-resize="" data-ctfw-map-callback-loaded="saved_position_map_section" data-ctfw-map-callback-resize="saved_position_map_section"></div>
+            <div id="saved-map-section-marker"><span class="saved-icon saved-icon-map-marker mdi mdi-map-marker"></span></div>
+
+        </div>*@
 
         <div id="saved-map-section-map">
 
@@ -284,7 +297,9 @@
 
             </div>
         </div>
-    </section><section class="saved-home-secondary-widgets-section saved-widgets-row saved-bg-contrast" id="saved-home-section-4">
+    </section>
+
+    <section class="saved-home-secondary-widgets-section saved-widgets-row saved-bg-contrast" id="saved-home-section-4">
         <div class="saved-widgets-row-inner saved-centered-large">
             <div class="saved-widgets-row-content">
                 <aside id="tribe-this-week-events-widget-3" class="saved-widget tribe-this-week-events-widget">
@@ -310,9 +325,9 @@
 
                                 <div class="tribe-this-week-widget-header-date">
                                     @if (DateTime.Now.Day.ToString().EndsWith("3"))
-                                     {
+                                    {
                                         <span class="date">Sun @DateTime.Now.Day.ToString()rd</span>
-                                     }
+                                    }
                                     else
                                     {
                                         <span class="date">Sun @DateTime.Now.Day.ToString()th </span>
@@ -648,6 +663,7 @@
             </div>
         </div>
     </section>
+
     <section class="saved-bg-section saved-viewport-height-50 saved-color-main-bg saved-section-has-title saved-section-has-content saved-section-has-image saved-section-no-video saved-section-has-image-or-video saved-bg-section-attachment-fixed saved-section-has-large-text saved-section-is-centered saved-section-orientation-vertical" id="saved-home-section-5">
 
         <div class="saved-bg-section-image" style="opacity: 0.6; background-image: url(~/wp-content/uploads/2018/08/bg.jpeg);"></div> <!-- faster than :before on FF/Retina -->
@@ -659,7 +675,20 @@
 
             <div class="saved-bg-section-content">
 
-
+                @*<div class="container">
+            <div class="center headerbox">
+                <p class="heading animated fadeInUp">Hey! Are you looking  <span class="your">to</span> <span class="typing"></span></p>
+                <p class="subheading animated fadeInUp">
+                    <span>If Yes!</span>, just relax because we've got <span>you covered</span>!
+                </p>
+                <div class="animated fadeInUp"><a href="#Courses" class="order">Get Started<span class="icon-circle-right" aria-hidden="true"></span></a></div>
+                <div class="scroll-downs animated fadeInUp">
+                    <div class="roll">
+                        <div class="scroll"></div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
                 <h2>
                     Get Involved.
                 </h2>
@@ -672,12 +701,30 @@
 
 
 
+
                 <div class="saved-section-bg-buttons">
 
                     <ul class="saved-buttons-list saved-buttons-list-large">
 
-                        <li><a href="#" class="">Join a Proffesional Group</a></li>
-                        <li><a href="/accounts/register" class="saved-button-light">Become a member</a></li>
+
+
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li><a href="#" class="">Join a Proffesional Group</a></li>
+
+                        }
+                        else
+                        {
+
+                            <li><a href="#" class="">Join a Proffesional Group</a></li>
+                            <li><a href="/accounts/register" class="saved-button-light">Become a member</a></li>
+                        }
+
+
+
+
+
 
                     </ul>
 

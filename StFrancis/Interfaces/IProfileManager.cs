@@ -8,7 +8,7 @@ namespace StFrancis.Interfaces
 {
     public interface IProfileManager
     {
-         Task<ProfileDetails> GetUserById(string UserId);
+         Task<ProfileDetails> GetUserByIdAsync(string UserId);
          Task <List<ProfileDetails>> GetUsers();
         Task<bool> UpdateProfileImage(string UserId);
 

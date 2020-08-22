@@ -9,22 +9,26 @@ using StFrancis.Interfaces;
 using StFrancis.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using StFrancis.Models;
+using System.Security.Claims;
+using StFrancis.Services;
 
 namespace StFrancis.Controllers
 {
     [Route("[controller]")]
     public class AccountsController : Controller
     {
-        private readonly IUserManager _userManager;
+        private readonly IProfileManager _profileManager; 
+        private readonly IUserService _userService;
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly SignInManager<User> _signInManager;
       
 
-        public AccountsController(IUserManager userManager, SignInManager<User> signInManager, IHostingEnvironment hostingEnvironment)
+        public AccountsController(IUserService userService, SignInManager<User> signInManager, IProfileManager profileManager,  IHostingEnvironment hostingEnvironment)
         {
-           _userManager = userManager;
-           _hostingEnvironment = hostingEnvironment;
+           _userService = userService;
+           _hostingEnvironment = hostingEnvironment; 
             _signInManager = signInManager;
+            _profileManager = profileManager; 
         }
         
         [HttpGet]
@@ -82,7 +86,7 @@ namespace StFrancis.Controllers
             //    return Json(new { status = false, data = "Please enter your Surname and Othername" });
             //}
 
-            var result = await _userManager.Register(registerVm);
+            var result = await _userService.Register(registerVm);
             if(result.Item1)
             {
                 return Json(new { status = result.Item1,  data = $"Hello {result.Item2} your registration was successfull. Welcome on board; we are glad to have you." });
@@ -106,7 +110,7 @@ namespace StFrancis.Controllers
         [Route("[action]")]
         public async Task<ActionResult> Login([FromBody]AuthVm loginVm)
         {
-            var response = await _userManager.AuthenticateUser(loginVm);
+            var response = await _userService.AuthenticateUser(loginVm);
             if (response.Item1)
             {
                 return Json(new { status = response.Item1, data = response.Item3});
@@ -119,22 +123,26 @@ namespace StFrancis.Controllers
         [Route("[action]")]
         public async Task<ActionResult> Logout() 
         {
-            //var response = await _userManager.Signout();
-            //if (response)
-            //{
-            //return Json(new { status = response.Item1, data = response.Item3 });
-            await _signInManager.SignOutAsync();
+            var response = await _userService.Signout();
+            if (response)
+            {
+                //return Json(new { status = response.Item1, data = response.Item3 });
+                //await _signInManager.SignOutAsync();
                 return RedirectToAction("Index", "Home");
-            //}
-            //return View();
+            }
+
+            return View();
         }
 
         [Authorize]
-        [Route("[action]")]
         [HttpGet]
-        public ActionResult Profile()
+        [Route("[action]")]
+      
+        public async Task<ActionResult> Profile() 
         {
-            return View();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            ProfileDetails details = await _profileManager.GetUserByIdAsync(userId); 
+            return View(details);
         }
 
     }
