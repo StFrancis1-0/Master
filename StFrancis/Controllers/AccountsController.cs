@@ -2,10 +2,13 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using StFrancis.Interfaces;
 using StFrancis.ViewModel;
+using Microsoft.AspNetCore.Identity;
+using StFrancis.Models;
 
 namespace StFrancis.Controllers
 {
@@ -14,11 +17,14 @@ namespace StFrancis.Controllers
     {
         private readonly IUserManager _userManager;
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly SignInManager<User> _signInManager;
+      
 
-        public AccountsController(IUserManager userManager, IHostingEnvironment hostingEnvironment)
+        public AccountsController(IUserManager userManager, SignInManager<User> signInManager, IHostingEnvironment hostingEnvironment)
         {
            _userManager = userManager;
            _hostingEnvironment = hostingEnvironment;
+            _signInManager = signInManager;
         }
         
         [HttpGet]
@@ -104,11 +110,32 @@ namespace StFrancis.Controllers
             if (response.Item1)
             {
                 return Json(new { status = response.Item1, data = response.Item3});
-                //return RedirectToAction("register", "accounts");
+                //return RedirectToAction("profile", "accounts");
             }
             return View();
         }
 
+        [HttpPost]
+        [Route("[action]")]
+        public async Task<ActionResult> Logout() 
+        {
+            //var response = await _userManager.Signout();
+            //if (response)
+            //{
+            //return Json(new { status = response.Item1, data = response.Item3 });
+            await _signInManager.SignOutAsync();
+                return RedirectToAction("Index", "Home");
+            //}
+            //return View();
+        }
+
+        [Authorize]
+        [Route("[action]")]
+        [HttpGet]
+        public ActionResult Profile()
+        {
+            return View();
+        }
 
     }
 }

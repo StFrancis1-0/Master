@@ -10,6 +10,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using MimeKit;
+using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace StFrancis.Services
 {
@@ -17,13 +21,18 @@ namespace StFrancis.Services
     {
         private readonly AppDbContext _context;
         private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signinManager;
         private readonly IConfiguration _configuration;
+        public string email = "";
+        public string fullName = ""; 
 
-        public UserManager(AppDbContext context, UserManager<User> userManager, IConfiguration configuration)
+
+        public UserManager(AppDbContext context, UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration)
         {
            _context = context;
            _userManager = userManager;
            _configuration = configuration;
+            _signinManager = signInManager;
         }
         public async Task<Tuple<bool, string, AuthResponse>> AuthenticateUser(AuthVm login)
         {
@@ -80,13 +89,24 @@ namespace StFrancis.Services
                     ImagePath = user.ImagePath
                 };
 
-                return new Tuple<bool, string, AuthResponse>(true, " ", response);
+               var result = await _signinManager.PasswordSignInAsync(login.Phone_Email, login.Password, false, false);
+
+       
+
+                return new Tuple<bool, string, AuthResponse>(result.Succeeded, " ", response);
             }
             catch (Exception ex)
             {
 
                 throw new Exception(ex.Message);
             }
+        }
+
+        public async Task<bool> Signout()
+        {
+            await _signinManager.SignOutAsync();
+
+            return true;
         }
 
         public async Task<Tuple<bool, string>> Register(RegisterVm registerVm)
@@ -99,7 +119,8 @@ namespace StFrancis.Services
                     return new Tuple<bool, string>(false, "Phone number or email has been taken");
                 }
 
-
+                email = registerVm.Email;
+                fullName = registerVm.Surname + " " + registerVm.OtherNames;
                 User userToRegister = new User
                 {
                     Surname = registerVm.Surname,
@@ -123,13 +144,14 @@ namespace StFrancis.Services
                     MembershipCardNumber = registerVm.MCardNumber,
                     
                 };
-
+                
                 var result = await _userManager.CreateAsync(userToRegister, registerVm.Password);
                 if (!result.Succeeded)
                 {
                     return new Tuple<bool, string>(false, result.Errors.FirstOrDefault().Description);
                 }
 
+                SendMail();
 
                 return new Tuple<bool, string>(true, userToRegister.Surname + " " + userToRegister.OtherNames);
             }
@@ -139,6 +161,36 @@ namespace StFrancis.Services
                 return new Tuple<bool, string>(false, "Oops! An error occured");
             }
 
+        }
+
+        private bool SendMail()
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("StFrancis", "admin@stfrancisoregun.org"));
+            message.To.Add(new MailboxAddress("User", email));
+            message.Subject = "Welcome to StFrancis Catholic Church";
+            message.Body = new TextPart("plain")
+            {
+                Text = $"Hello, {fullName}\n\n" +
+              @"You are welcome to StFrancis Catholic Church.
+For further enquiry, kindly send a mail to admin@stfrancisoregun.org
+
+We are happy to have you here.
+
+Thank you."
+            };
+
+            using (var client = new SmtpClient())
+            {
+                //client.Connect("mail.stfrancisoregun.org", 25, false);
+                client.Connect("smtp.gmail.com", 587, false);
+                //client.Authenticate("admin@stfrancisoregun.org", "Password@1");
+                client.Authenticate("scriptchore@gmail.com", "www.osoftit.com@2020");
+                client.Send(message);
+                client.Disconnect(true);
+            }
+
+            return true;
         }
 
         public Task<object> RegisterProfession()

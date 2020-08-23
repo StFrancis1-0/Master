@@ -38,6 +38,13 @@ namespace StFrancis
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSession();
+
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("StFrancisConnection")));
 
             services.AddIdentity<User, IdentityRole>(Options =>
@@ -85,6 +92,7 @@ namespace StFrancis
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication(); 
 
             app.UseMvc(routes =>
             {

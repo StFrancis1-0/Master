@@ -1,4 +1,5 @@
-﻿using StFrancis.ViewModel;
+﻿using Microsoft.AspNetCore.Mvc;
+using StFrancis.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace StFrancis.Interfaces
         Task<Tuple<bool, string>> Register(RegisterVm registerVm);
         Task<Tuple<bool, string, AuthResponse>> AuthenticateUser(AuthVm login);
         Task<object> RegisterProfession();
+        Task<bool> Signout();
     }
 }
