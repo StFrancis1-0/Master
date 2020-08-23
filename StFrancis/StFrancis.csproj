@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Accounts\profile.cshtml" />
     <Content Remove="Views\Profile\Profile.cshtml" />
   </ItemGroup>
 
@@ -17,7 +16,7 @@
     <PackageReference Include="MailKit" Version="2.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Accounts\Profile.cshtml" />
     <None Include="Views\Profile\Profile.cshtml" />
   </ItemGroup>
 
