@@ -151,7 +151,7 @@ namespace StFrancis.Services
                     return new Tuple<bool, string>(false, result.Errors.FirstOrDefault().Description);
                 }
 
-                SendMail();
+                //SendMail();
 
                 return new Tuple<bool, string>(true, userToRegister.Surname + " " + userToRegister.OtherNames);
             }
