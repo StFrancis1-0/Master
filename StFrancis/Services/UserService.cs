@@ -151,7 +151,7 @@ namespace StFrancis.Services
                     return new Tuple<bool, string>(false, result.Errors.FirstOrDefault().Description);
                 }
 
-                SendMail();
+                //SendMail();
 
                 return new Tuple<bool, string>(true, userToRegister.Surname + " " + userToRegister.OtherNames);
             }
@@ -182,9 +182,10 @@ Thank you."
 
             using (var client = new SmtpClient())
             {
-                //client.Connect("mail.stfrancisoregun.org", 25, false);
-                client.Connect("smtp.gmail.com", 587, false);
-                //client.Authenticate("admin@stfrancisoregun.org", "Password@1");
+                client.Connect("mail.stfrancisoregun.org", 465, true);
+                //client.Connect("smtp.gmail.com", 587, false);
+                client.Authenticate("admin@stfrancisoregun.org", "Password@1");
+
                 client.Authenticate("scriptchore@gmail.com", "www.osoftit.com@2020");
                 client.Send(message);
                 client.Disconnect(true);

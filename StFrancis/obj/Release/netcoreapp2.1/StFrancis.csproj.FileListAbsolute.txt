@@ -68,3 +68,6 @@ C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\StFr
 C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\StFrancis.pdb
 C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\StFrancis.csproj.CopyComplete
 C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\Razor\Views\Admin\Create.g.cshtml.cs
+C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\Razor\Views\Accounts\Index.g.cshtml.cs
+C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\Razor\Views\Profile\Profile_old.g.cshtml.cs
+C:\Users\HP\source\repos\St-Francis-Web\StFrancis\obj\Release\netcoreapp2.1\Razor\Views\Shared\_ProfileLayout.g.cshtml.cs

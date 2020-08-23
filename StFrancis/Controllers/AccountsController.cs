@@ -134,7 +134,7 @@ namespace StFrancis.Controllers
             return View();
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         [Route("[action]")]
       
