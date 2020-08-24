@@ -20,10 +20,38 @@ namespace StFrancis.Controllers
             return View();
         }
 
-        public IActionResult NwodoDetail()
+      
+          public IActionResult NwodoDetail()
         {
             return View();
         }
+
+        public IActionResult LambertDetail()
+        {
+            return View();
+        }
+
+        public IActionResult DianaDetail()
+        {
+            return View();
+        }
+
+        public IActionResult IniobongDetail()
+        { 
+            return View();
+        }
+
+        public IActionResult MichealDetail() 
+        {
+            return View();
+        }
+
+
+        public IActionResult PatrickDetail()
+        {
+            return View();
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

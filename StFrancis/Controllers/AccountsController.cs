@@ -54,7 +54,7 @@ namespace StFrancis.Controllers
             }
             var webRootPath = _hostingEnvironment.WebRootPath;
             var folderName = "img";
-            var pathToSave = Path.Combine(webRootPath, folderName, "ProfilePictures");
+            var pathToSave = Path.Combine(webRootPath, folderName, "ProfilePicture");
             if (!Directory.Exists(pathToSave))
             {
                 Directory.CreateDirectory(pathToSave);
@@ -134,7 +134,22 @@ namespace StFrancis.Controllers
             return View();
         }
 
-        //[Authorize]
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<ActionResult> Logout1() 
+        {
+            var response = await _userService.Signout();
+            if (response)
+            {
+                //return Json(new { status = response.Item1, data = response.Item3 });
+                //await _signInManager.SignOutAsync();
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View();
+        }
+
+        [Authorize]
         [HttpGet]
         [Route("[action]")]
       
