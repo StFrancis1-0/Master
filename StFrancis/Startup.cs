@@ -67,6 +67,7 @@ namespace StFrancis
             services.AddScoped<IUserService, UserService>(); 
             services.AddScoped<IProfileManager, ProfileManager>();
             services.AddScoped<IActivityManager, ActivityManager>();
+            services.AddScoped<IBlogManager, BlogManager>();
 
 
         }

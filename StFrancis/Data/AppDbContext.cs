@@ -13,5 +13,6 @@ namespace StFrancis.Data
         }
 
         public DbSet<Event> Events { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
     }
 }

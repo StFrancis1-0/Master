@@ -53,6 +53,11 @@ namespace StFrancis.Services
                     user = await _userManager.FindByEmailAsync(login.Phone_Email);
                 }
 
+                if (user == null)
+                {
+                    return new Tuple<bool, string, AuthResponse>(false, "Your email/phone number and or password is incorrect", null);
+                }
+
                 var userHasPassword = await _userManager.HasPasswordAsync(user);
                 if (!userHasPassword)
                 {
@@ -65,11 +70,7 @@ namespace StFrancis.Services
                     return new Tuple<bool, string, AuthResponse>(false, "Your password is invalid", null);
                 }
 
-                if (user == null)
-                {
-                    return new Tuple<bool, string, AuthResponse>(false, "Your email/phone number and or password is incorrect", null);
-                }
-
+                
 
                 var claims = new List<Claim>()
                 {

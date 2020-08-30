@@ -113,10 +113,10 @@ namespace StFrancis.Controllers
             var response = await _userService.AuthenticateUser(loginVm);
             if (response.Item1)
             {
-                return Json(new { status = response.Item1, data = response.Item3});
+                return Json(new { status = response.Item1, message = response.Item2, data = response.Item3});
                 //return RedirectToAction("profile", "accounts");
             }
-            return View();
+            return Json(new { status = response.Item1, message = response.Item2, data = response.Item3 });
         }
 
         [HttpPost]
