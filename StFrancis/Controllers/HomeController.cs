@@ -52,8 +52,8 @@ namespace StFrancis.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
+        public IActionResult AboutUS()
+        { 
             ViewData["Message"] = "Your application description page.";
 
             return View();
