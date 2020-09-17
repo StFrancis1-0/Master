@@ -31,7 +31,12 @@ namespace StFrancis.Controllers
             return View();
         }
 
-        public IActionResult DianaDetail()
+        public IActionResult ChineduDetail()
+        {
+            return View();
+        }
+
+        public IActionResult PeterDetail() 
         {
             return View();
         }
@@ -49,6 +54,11 @@ namespace StFrancis.Controllers
 
         public IActionResult PatrickDetail()
         {
+            return View();
+        }
+
+        public IActionResult Online()
+        { 
             return View();
         }
 

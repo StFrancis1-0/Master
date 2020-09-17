@@ -586,7 +586,6 @@
 
                         </div>
 
-
                         <nav id="saved-header-menu">
 
                             <div id="saved-header-menu-inner">
@@ -597,23 +596,27 @@
                                         <a href="/Home/AboutUS">About</a>
                                         <ul class="sub-menu">
                                             <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="#">Who We Are</a></li>
-                                                                                    
+
                                             <li id="menu-item-4758" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4758"><a href="#">Societies</a></li>
                                             <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="#">Membership</a></li>
                                             <li id="menu-item-173" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-173"><a href="#">Contact Us</a></li>
                                         </ul>
                                     </li>
 
-                                    <li id="menu-item-104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-104">
-                                        <a href="#">Connect</a>
-                                        <ul class="sub-menu">
-                                            <li id="menu-item-234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-234"><a href="#">CMO</a></li>
-                                            <li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="#">CWO</a></li>
-                                            <li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176"><a href="#">CYON</a></li>
+                                    @if (SignInManager.IsSignedIn(User))
+                                    {
 
-                                            <li id="menu-item-3046" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3046"><a href="#">Contact Us</a></li>
-                                        </ul>
-                                    </li>
+                                        <li id="menu-item-104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-104">
+                                            <a href="#">Connect</a>
+                                            <ul class="sub-menu">
+                                                <li id="menu-item-234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-234"><a href="#">CMO</a></li>
+                                                <li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="#">CWO</a></li>
+                                                <li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176"><a href="#">CYON</a></li>
+
+                                                <li id="menu-item-3046" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3046"><a href="#">Contact Us</a></li>
+                                            </ul>
+                                        </li>
+                                    }
                                     <li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-105">
                                         <a href="#">Whatch us online</a>
 
@@ -633,24 +636,24 @@
                                     @if (SignInManager.IsSignedIn(User))
                                     {
 
-                                    <li id="menu-item-2465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2465">
+                                        <li id="menu-item-2465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2465">
 
-                                        <a asp-controller="Accounts" asp-action="Profile">Welcome @User.Identity.Name</a>
+                                            <a asp-controller="Accounts" asp-action="Profile">Welcome @User.Identity.Name</a>
 
-                                        <ul class="sub-menu">
+                                            <ul class="sub-menu">
 
-                                            <li id="menu-item-2465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2465">
-
-
-                                                <form asp-controller="Accounts" asp-action="Logout">
-                                                    <button type="submit" title="Logout">Logout</button>
-                                                </form>
+                                                <li id="menu-item-2465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2465">
 
 
-                                            </li>
-                                        </ul>
+                                                    <form asp-controller="Accounts" asp-action="Logout">
+                                                        <button type="submit" title="Logout">Logout</button>
+                                                    </form>
 
-                                    </li>
+
+                                                </li>
+                                            </ul>
+
+                                        </li>
 
 
 
@@ -738,14 +741,20 @@
 
                     @if ((string)ViewData["Title"] == "AboutUS")
                     {
-                    <div class="saved-h1">AboutUS</div>
+                        <div class="saved-h1">AboutUS</div>
+                    }
+
+
+                    @if ((string)ViewData["Title"] == "Online")
+                    {
+                        <div class="saved-h1">Online</div>
                     }
 
                     else
                     {
-                    <div class="saved-h1">Pastoral Team</div>
+                        <div class="saved-h1">Pastoral Team</div>
                     }
-                    
+
 
 
 
@@ -863,15 +872,35 @@
 
                 <nav id="saved-footer-menu">
                     <ul id="saved-footer-menu-content" class="">
-                        <li id="menu-item-465" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-465"><a href="#">New Here</a></li>
-                        <li id="menu-item-470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-470"><a href="#">About</a></li>
-                        <li id="menu-item-471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-471"><a href="#">Gather</a></li>
-                        <li id="menu-item-472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-472"><a href="#">Connect</a></li>
-                        <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="#">Serve</a></li>
-                        <li id="menu-item-474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474"><a href="#">Resources</a></li>
+                        <li id="menu-item-465" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-465"><a href="/Home">Home</a></li>
+                        <li id="menu-item-470" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-470"><a href="/Home/AboutUS">About</a></li>
+                        <li id="menu-item-471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-471"><a href="/Home/Online">Whatch us online</a></li>
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li id="menu-item-472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-472"><a href="#">Connect</a></li>
+
+                        }
+
+
+                        <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="#">Give</a></li>
+                        <li id="menu-item-474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474"><a href="#">Blog</a></li>
                         <li id="menu-item-475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="#">Support Us</a></li>
-                        <li id="menu-item-752" class="saved-menu-button menu-item menu-item-type-custom menu-item-object-custom menu-item-752"><a href="/accounts/login">Member Login</a></li>
+
+
+
+
+                        @if (!SignInManager.IsSignedIn(User))
+                        {
+                            <li id="menu-item-752" class="saved-menu-button menu-item menu-item-type-custom menu-item-object-custom menu-item-752"><a href="/accounts/login">Member Login</a></li>
+
+                        }
+
+
+
                     </ul>
+                    
+                    
                 </nav>
 
 
