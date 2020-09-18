@@ -46,7 +46,7 @@ namespace StFrancis.Controllers
             return View();
         }
 
-        public IActionResult MichealDetail() 
+        public IActionResult Thomasdetail()  
         {
             return View();
         }
